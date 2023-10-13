@@ -1,3 +1,6 @@
 # src/tradehive_mobile/customer/android/app/google-services.json
 # src/tradehive_mobile/customer/ios/Runner/GoogleService-Info.plist
 # src/tradehive_mobile/customer/.env
+.env
+node_modules/
+src/tradehive_backend/config.env
