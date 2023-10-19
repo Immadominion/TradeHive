@@ -18,5 +18,9 @@ router.post('/signup', authController.signup)
 //router.get('/auth/google/callback', userController.retrieveData)
 //router.get('/profile', userController.profile)
 
+<<<<<<< HEAD
 module.exports = router;
 >>>>>>> 26e7001 (Created signup route)
+=======
+module.exports = router;
+>>>>>>> 3f0ef5e (Created signup route)
