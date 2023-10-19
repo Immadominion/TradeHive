@@ -1,0 +1,9 @@
+@import 'config';
+@import "nav";
+@import 'bodyLoggedIn';
+@import 'products';
+@import 'responsive';
+body{
+  font-family: 'Inter', sans-serif;
+  padding-bottom: min(150px, 50vh);
+}

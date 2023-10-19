@@ -1,0 +1,15 @@
+@import "config";
+
+@include media-lg {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+;
+
+@include media-xl {
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
