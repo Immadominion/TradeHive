@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
-dotenv.config({ path: './src/tradehive_backend/config.env' })
+dotenv.config({ path: './src/backend/config.env' })
 const app = require('./app')
 
 mongoose.connect(process.env.DB, {

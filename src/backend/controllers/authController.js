@@ -45,3 +45,30 @@ exports.signup = async (req, res, next) => {
             })
         }
 }
+
+exports.login = async (req, res, next) => {
+    // const email = req.body.email
+    // const password = req.body.password
+    //USING OBJECT DESTRUCTURING
+    const { email, password } = req.body
+    // 1) Check if email and password exists
+    if(!email || !password) {
+    return res.status(400).json({
+            status: 'fail',
+            message: 'Please provide email and password'
+        })
+    
+    }
+    // 2) Check if user exists && password exists
+    const user = await User.findOne({ email }).select('+password');
+
+    if(!user || !(await user.correctPassword(password, user.password))){
+        return res.status(401).json({
+            status: 'fail',
+            message: 'Incorrect email or password'
+        })
+    }
+    
+    // 3) If everything ok. send token to client 
+    createAndSendToken(user, 200, res)
+}

@@ -1,11 +1,13 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String, 
         required: [true, 'PLease input your username '],
-        trim: true, // This removes leading and trailing white spaces
+        unique: true,
+         // This removes leading and trailing white spaces
         validate: {
           validator: function(value) {
             // Use a regular expression to check if there are any white spaces
@@ -16,9 +18,9 @@ const userSchema = new mongoose.Schema({
     }, 
     email:{
         type: String, 
-        required: [true, 'Please input an email address'],
-        unique: true,
-        lowercase: true
+        required: [true, 'Please input a new email address'],
+        lowercase: true,
+        unique: true
     },
     photo: String,
     password: {
@@ -40,6 +42,12 @@ userSchema.pre('save', async function(next){
     this.password =  await bcrypt.hash(this.password, 12)
     next();
 });
+
+//Compares incoming and existing password
+userSchema.methods.correctPassword = async function(candidatePassword, userPassword){
+    return await bcrypt.compare(candidatePassword, userPassword)
+};
+
 
 
 const User = mongoose.model('User', userSchema)

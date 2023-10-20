@@ -6,49 +6,51 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 const jwt = require('jsonwebtoken')
 const User = require('./../models/userModel')
 
-passport.use(new GoogleStrategy({
-  clientID: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/callback"
-}, async (accessToken, refreshToken, profile, cb) => {
-try{
-  const existingUser = await User.findOne({ googleId: profile.id }) 
-         // If the user already exists, return it 
-      if (existingUser) {
-          return existingUser;
-    } else {
-      // If the user does not exist, create a new user using the profile data
-        const newUser = await User.create({
-        method: 'google',
-        googleId: profile.id,
-        email: profile.emails[0].value,
-        name: profile.displayName
-        // You can map other profile data here
-      }); 
-      return newUser;
-    }
-} catch(err){
-    return done(err)
-  }
-}));
 
 
-exports.redirect = (req, res, next) => {
-  passport.authenticate('google', { scope: ['profile'] });
-  next()
-}
+// passport.use(new GoogleStrategy({
+//   clientID: process.env.CLIENT_ID,
+//   clientSecret: process.env.CLIENT_SECRET,
+//   callbackURL: "http://localhost:3000/auth/google/callback"
+// }, async (accessToken, refreshToken, profile, cb) => {
+// try{
+//   const existingUser = await User.findOne({ googleId: profile.id }) 
+//          // If the user already exists, return it 
+//       if (existingUser) {
+//           return existingUser;
+//     } else {
+//       // If the user does not exist, create a new user using the profile data
+//         const newUser = await User.create({
+//         method: 'google',
+//         googleId: profile.id,
+//         email: profile.emails[0].value,
+//         name: profile.displayName
+//         // You can map other profile data here
+//       }); 
+//       return newUser;
+//     }
+// } catch(err){
+//     return done(err)
+//   }
+// }));
 
-exports.retrieveData = (req, res, next) => {
-    passport.authenticate('google', { failureRedirect: '/login', session: false }),
-  function(req, res) {
-    res.redirect('/')
-    }
-    // Successful authentication, redirect home.
-}
 
-exports.profile = () => {
+// exports.redirect = (req, res, next) => {
+//   passport.authenticate('google', { scope: ['profile'] });
+//   next()
+// }
 
-}
+// exports.retrieveData = (req, res, next) => {
+//     passport.authenticate('google', { failureRedirect: '/login', session: false }),
+//   function(req, res) {
+//     res.redirect('/')
+//     }
+//     // Successful authentication, redirect home.
+// }
+
+// exports.profile = () => {
+
+// }
 
 // passport.use(new JWTStrategy({
 //   jwtFromRequest: ExtractJwt.fromHeader(""),
