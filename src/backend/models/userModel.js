@@ -20,7 +20,8 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: [true, 'Please input a new email address'],
         lowercase: true,
-        unique: true
+        unique: true,
+        validate: [validator.isEmail, 'Please provide a valid email']
     },
     photo: String,
     password: {
@@ -28,6 +29,12 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Please provide a password'],
         minlength: 8,
         select: false
+    },
+    school:{
+        type: String
+    },
+    phone:{
+        type: String
     },
     passwordChangedAt: Date,
     passwordResetToken: String, 

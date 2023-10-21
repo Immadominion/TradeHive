@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const User = require('./../models/userModel')
+const { promisify } = require('util')
 
 //Token initialization
 const signToken = id => { return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -71,4 +72,51 @@ exports.login = async (req, res, next) => {
     
     // 3) If everything ok. send token to client 
     createAndSendToken(user, 200, res)
+}
+
+//Restricts routes to only logged in users
+
+exports.protect = async (req, res, next) => {
+    // 1) Getting token and check if its there
+    let token; // token variable initially declared here due to block scope ES6
+    if( req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
+        token = req.headers.authorization.split(' ')[1]
+    }
+
+    if(!token) {
+        return next(res.status(401).json({message: "You're not logged in!. Please log in to get access"}))
+    }
+    // 2) Verification token 
+    let decoded;
+    try{
+    decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET) //returns the payload which is the user's id
+    console.log(decoded)
+    } catch(err){
+    return res.status(401).json({
+            status: 'fail',
+            message: ["Invalid token, Please log in", {Error: err}]
+        })
+    }
+    
+    // 3) Check if user still exists
+    const currentUser = await User.findById(decoded.id)
+    if(!currentUser) {
+       // return next(res.json({message: ["The user belonging to this token does not exist"]}))
+       return res.status(401).json({
+        status:  'fail',
+        message: "The user belonging to this token does not exist"
+    })
+}
+    
+    // 4) Check if user changed password after the token was issued
+    // if(currentUser.changedPasswordAfter(decoded.iat)){
+    //     return res.status(401).json({
+    //         status: 'fail',
+    //         message: "User recently changed passowrd! Please log in again!"
+    //     })
+    // }
+
+    //GRANT ACCESS TO PROTECTED ROUTE
+    req.user = currentUser;
+    next();
 }

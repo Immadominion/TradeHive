@@ -6,6 +6,7 @@ const userController = require('./../controllers/userController')
 
 router.post('/login', authController.login)
 router.post('/signup', authController.signup)
+router.get('/profile', authController.protect, userController.profile)
 
 //router.post('/forgotPassword', authController.forgotPassword)
 //router.patch('/resetPassword/:token', authController.resetPassword)
