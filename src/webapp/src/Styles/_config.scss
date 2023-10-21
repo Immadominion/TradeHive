@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+$primary-color: #5538ee;
+$sky-color: #979c9e;
+$ink-color: #090a0a;
+
+@mixin media-xl {
+  @media screen and (min-width: 1400px) {
+    @content
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 700px) {
+    @content
+  }
+}
+
+@mixin media-sm {
+  @media screen and (max-width: 600px) {
+    @content
+  }
+}

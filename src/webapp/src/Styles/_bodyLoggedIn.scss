@@ -1,0 +1,116 @@
+@import "config";
+
+$lightSky: lighten($sky-color, 30%);
+.bodyLoggedIn {
+  padding-inline: 1rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 15px;
+
+  &__avatar {
+    width: 56px;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__notifications {
+    background-color: $sky-color;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 2fr 0.3fr;
+  background-color: white;
+  gap: 20px;
+  padding-block: 10px;
+  &__box {
+    background-color: $lightSky;
+    gap: 10px;
+    display: flex;
+    border-radius: 5px;
+
+    button {
+      font: inherit;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 20%;
+    }
+
+    input {
+      width: 80%;
+      height: 100%;
+      padding: 10px 5px;
+      background-color: transparent;
+      font: inherit;
+      border: none;
+    }
+  }
+
+  &__filter {
+    background-color: $lightSky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+
+    img{
+      display: block;
+      width: 20px;
+      height: auto;
+    }
+  }
+}
+
+.category {
+  &__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      border: none;
+      background-color: transparent;
+      font: inherit;
+      font-weight: 300;
+    }
+  }
+
+  &__categories {
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 10px;
+
+    button {
+      background-color: transparent;
+      border: 1px solid $ink-color;
+      border-radius: 10px;
+      padding: 10px 5px;
+      min-width: 6rem;
+      font: inherit;
+      font-size: .9rem;
+
+      &.active {
+        background-color: $primary-color;
+        border: none;
+        color: white;
+      }
+    }
+  }
+}
