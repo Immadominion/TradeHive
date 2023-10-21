@@ -3,4 +3,10 @@
 # src/tradehive_mobile/customer/.env
 .env
 node_modules/
+<<<<<<< HEAD
 src/tradehive_backend/config.env
+=======
+src/backend/config.env
+.vscode/settings.json
+src/backend/config.env
+>>>>>>> 26e7001 (Created signup route)
