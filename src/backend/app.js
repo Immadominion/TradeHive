@@ -31,7 +31,7 @@ const bucket = admin.storage().bucket();
 
 
 //Routes
-app.use('/api/v1/users', userRouter);
+app.use('/api/v1/account', userRouter);
 app.use('/api/v1/product', productRouter);
 app.use('/api/v1/shop', homeRouter);
 
