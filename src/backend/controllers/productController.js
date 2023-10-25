@@ -35,12 +35,13 @@ exports.postProduct = async (req, res)=>{
             });
 
             imageUrls.push(signedUrl);
-        }
+
+        }   
 
         //save product in db
         let product = new ProductModel({
             name: productName,
-            author: "test", //No access to auth user yet
+            author: req.user.id, //No access to auth user yet
             description: description,
             price: price,
             photo: imageUrls,
@@ -49,9 +50,9 @@ exports.postProduct = async (req, res)=>{
         });
 
         await product.save()
-        res.status(200).json({status: "success"})
+        res.status(200).json({status: "success", data: imageUrls})
     }catch(err){
         console.log(err)
-        res.status(500).json({status: "failed" ,errorMessage: "Couldn't upload due to server error" });
+        res.status(500).json({status: "failed" , errorMessage: err });
     }
 }

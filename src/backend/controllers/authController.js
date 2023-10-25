@@ -89,8 +89,7 @@ exports.protect = async (req, res, next) => {
     // 2) Verification token 
     let decoded;
     try{
-    decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET) //returns the payload which is the user's id
-    console.log(decoded)
+    decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET) //returns the payload which is the user's id 
     } catch(err){
     return res.status(401).json({
             status: 'fail',
