@@ -8,10 +8,68 @@ button {
   cursor: pointer;
 }
 
+.clearfix{
+  &::after{
+    content: ' ';
+    display: table;
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+
+
 $primary-color: #5538ee;
 $sky-color: #979c9e;
 $ink-color: #090a0a;
+.product {
+  padding: 10px;
+  border-radius: 17px;
+  box-shadow: 2px 1px 4px lighten($ink-color, 50%);
+  position: relative;
 
+  &__favourite{
+    position: absolute;
+    top: 20px;
+    right: 5%;
+    background-color: lighten($sky-color, 50%);
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .imgContainer {
+    border-radius: 7px;
+    overflow: hidden;
+    //max-height: 60%;
+
+    img {
+      object-fit: cover;
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio:  1.07/1;
+    }
+  }
+
+  h4{
+    margin-block: 1rem 0px;
+    max-width: 14ch;
+    font-size: 1.5rem;
+  }
+  span{
+    display: block;
+    padding-block: 0.2rem 0.4rem;
+
+    &:last-child{
+      padding-block: 20px 5px;
+    }
+  }
+}
 @mixin media-xl {
   @media screen and (min-width: 1400px) {
     @content

@@ -17,12 +17,25 @@ $lightSky: lighten($sky-color, 30%);
     border-radius: 50%;
     cursor: pointer;
   }
-
   &__notifications {
     background-color: $sky-color;
-    padding: 10px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    svg{
+      width: 18px;
+      height: 20px;
+      //fill: black;
+      path{
+        fill: black;
+      }
+    }
   }
 }
 
@@ -113,4 +126,10 @@ $lightSky: lighten($sky-color, 30%);
       }
     }
   }
+}
+
+.search__box>input:focus{
+body{
+  background-color: black;
+}
 }

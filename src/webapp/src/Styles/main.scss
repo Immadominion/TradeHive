@@ -2,7 +2,9 @@
 @import "nav";
 @import 'bodyLoggedIn';
 @import 'products';
+@import 'profile';
 @import 'responsive';
+
 body{
   font-family: 'Inter', sans-serif;
   padding-bottom: min(150px, 50vh);

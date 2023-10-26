@@ -1,5 +1,6 @@
 @import "config";
 
+
 @include media-lg {
   .products {
     grid-template-columns: repeat(3, 1fr);

@@ -1,0 +1,112 @@
+@import "config";
+
+.settingsIcon {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+
+
+  &__image {
+    width: min(50px, 30rem);
+    cursor: pointer;
+  }
+}
+
+.profile__image {
+  width: 60%;
+  margin-inline: auto;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .editIcon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    z-index: 10;
+
+    svg {
+      width: 1.2rem;
+    }
+  }
+}
+
+.profile__details {
+  text-align: center;
+  font-size: smaller;
+  padding-block: 1rem;
+}
+
+.activeListings {
+  display: flex;
+  flex-direction: column;
+
+  &__listing {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: smaller;
+    padding: 10px;
+    margin-block: 20px;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+  }
+
+  &__listing.showmore {
+    height: 27rem;
+  }
+
+  &__listing.showless {
+    height: auto;
+  }
+
+  &__showMore {
+    align-self: start;
+    background: transparent;
+    border: none;
+    padding: 10px 10px 10px 1rem;
+    font: inherit;
+  }
+}
+
+.profile__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+
+  .badge {
+    //max-height: 2rem;
+    background-color: $primary-color;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .leftArrow {
+    cursor: pointer;
+
+    svg {
+      width: 1rem;
+      align-self: center;
+    }
+  }
+}
