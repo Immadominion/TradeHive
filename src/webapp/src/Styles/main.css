@@ -478,12 +478,12 @@ button {
   padding: 10px;
 }
 .settingsIcon__image {
-  width: min(50px, 30rem);
+  width: min(40px, 30rem);
   cursor: pointer;
 }
 
 .profile__image {
-  width: 60%;
+  width: 54%;
   margin-inline: auto;
   overflow: hidden;
   position: relative;
@@ -517,6 +517,7 @@ button {
   text-align: center;
   font-size: smaller;
   padding-block: 1rem;
+  margin-bottom: 2rem;
 }
 
 .activeListings {
