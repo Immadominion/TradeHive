@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'controller/app_navigation_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
@@ -11,8 +13,6 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0XFFFFFFFF),
@@ -119,7 +119,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
       ),
       child: Column(
         children: [
-          SizedBox(height: 10.v),
+          SizedBox(height: 10.sp),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
@@ -129,14 +129,14 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0XFF000000),
-                  fontSize: 20.fSize,
+                  fontSize: 20.sp,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w400,
                 ),
               ),
             ),
           ),
-          SizedBox(height: 10.v),
+          SizedBox(height: 10.sp),
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
@@ -147,17 +147,17 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0XFF888888),
-                  fontSize: 16.fSize,
+                  fontSize: 16.sp,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w400,
                 ),
               ),
             ),
           ),
-          SizedBox(height: 5.v),
+          SizedBox(height: 5.sp),
           Divider(
-            height: 1.v,
-            thickness: 1.v,
+            height: 1.sp,
+            thickness: 1.sp,
             color: Color(0XFF000000),
           ),
         ],
@@ -180,7 +180,7 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
         ),
         child: Column(
           children: [
-            SizedBox(height: 10.v),
+            SizedBox(height: 10.sp),
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
@@ -190,18 +190,18 @@ class AppNavigationScreen extends GetWidget<AppNavigationController> {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Color(0XFF000000),
-                    fontSize: 20.fSize,
+                    fontSize: 20.sp,
                     fontFamily: 'Roboto',
                     fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 10.v),
-            SizedBox(height: 5.v),
+            SizedBox(height: 10.sp),
+            SizedBox(height: 5.sp),
             Divider(
-              height: 1.v,
-              thickness: 1.v,
+              height: 1.sp,
+              thickness: 1.sp,
               color: Color(0XFF888888),
             ),
           ],

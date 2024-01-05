@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../controller/market_one_controller.dart';
 import '../models/marketone_item_model.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +32,7 @@ class MarketoneItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            height: 132.v,
+            height: 132.sp,
             width: 141.h,
             child: Stack(
               alignment: Alignment.topRight,
@@ -38,7 +40,7 @@ class MarketoneItemWidget extends StatelessWidget {
                 Obx(
                   () => CustomImageView(
                     imagePath: marketoneItemModelObj.image!.value,
-                    height: 132.v,
+                    height: 132.sp,
                     width: 141.h,
                     radius: BorderRadius.circular(
                       5.h,
@@ -48,12 +50,12 @@ class MarketoneItemWidget extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: 6.v,
+                    top: 6.sp,
                     right: 8.h,
                   ),
                   child: CustomIconButton(
-                    height: 20.adaptSize,
-                    width: 20.adaptSize,
+                    height: 20.sp,
+                    width: 20.sp,
                     padding: EdgeInsets.all(2.h),
                     alignment: Alignment.topRight,
                     child: CustomImageView(
@@ -64,7 +66,7 @@ class MarketoneItemWidget extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 6.v),
+          SizedBox(height: 6.sp),
           Container(
             width: 105.h,
             margin: EdgeInsets.only(left: 6.h),
@@ -77,7 +79,7 @@ class MarketoneItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 6.v),
+          SizedBox(height: 6.sp),
           Align(
             alignment: Alignment.center,
             child: Obx(
@@ -87,7 +89,7 @@ class MarketoneItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20.v),
+          SizedBox(height: 20.sp),
           Padding(
             padding: EdgeInsets.only(left: 6.h),
             child: Obx(
@@ -97,7 +99,7 @@ class MarketoneItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 2.v),
+          SizedBox(height: 2.sp),
         ],
       ),
     );

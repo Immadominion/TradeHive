@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../market_page/widgets/market_item_widget.dart';
 import 'controller/market_controller.dart';
 import 'models/market_item_model.dart';
@@ -13,14 +15,13 @@ class MarketPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             body: Container(
                 width: double.maxFinite,
                 decoration: AppDecoration.fillWhiteA,
                 child: Column(children: [
-                  SizedBox(height: 16.v),
+                  SizedBox(height: 16.sp),
                   Expanded(
                       child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 21.h),
@@ -28,7 +29,7 @@ class MarketPage extends StatelessWidget {
                               shrinkWrap: true,
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
-                                      mainAxisExtent: 265.v,
+                                      mainAxisExtent: 265.sp,
                                       crossAxisCount: 2,
                                       mainAxisSpacing: 11.h,
                                       crossAxisSpacing: 11.h),

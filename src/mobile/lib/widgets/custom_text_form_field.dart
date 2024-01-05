@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField({
@@ -107,8 +108,8 @@ class CustomTextFormField extends StatelessWidget {
         contentPadding: contentPadding ??
             EdgeInsets.only(
               left: 11.h,
-              top: 11.v,
-              bottom: 11.v,
+              top: 11.sp,
+              bottom: 11.sp,
             ),
         fillColor: fillColor,
         filled: filled,

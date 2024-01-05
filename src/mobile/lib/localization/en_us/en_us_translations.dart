@@ -5,6 +5,15 @@ final Map<String, String> enUs = {
   "msg_connecting_student": "Connecting Student buyers to sellers",
   "msg_have_an_account": "Have an account? Log in",
   "msg_have_an_account2": "Have an account? ",
+  "empower_student_entrepreneurs": "Empower Student Entrepreneurs",
+  "empower_student_entrepreneurs_page":
+      "Empower student entrepreneurs to showcase and sell their unique creations on our platform.",
+  "discover_exclusive_deals": "Discover Exclusive Deals",
+  "discover_exclusive_deals_page":
+      "Enjoy exclusive student discounts on a variety of products. Smart shopping, student-friendly prices.",
+  "support_the_student_community": "Support the Student Community",
+  "support_the_student_community_page":
+      "Join a supportive community that values collaboration and empowers student entrepreneurs. Build a brighter future together.",
 
   // HiveLogin Screen
   "msg_connecting_students":

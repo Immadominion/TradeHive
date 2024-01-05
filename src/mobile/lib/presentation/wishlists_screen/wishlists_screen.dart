@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../wishlists_screen/widgets/productisnolonger2_item_widget.dart';
 import 'controller/wishlists_controller.dart';
 import 'models/productisnolonger2_item_model.dart';
@@ -22,8 +24,6 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
@@ -32,7 +32,7 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
             children: [
               _buildThirtyNine(),
               SizedBox(
-                height: 638.v,
+                height: 638.sp,
                 width: double.maxFinite,
                 child: Stack(
                   alignment: Alignment.bottomCenter,
@@ -47,7 +47,7 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               _buildUnsplashOBaEeEsA(),
-                              SizedBox(height: 47.v),
+                              SizedBox(height: 47.sp),
                               _buildProductIsNoLonger(),
                             ],
                           ),
@@ -69,14 +69,14 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
   /// Section Widget
   Widget _buildThirtyNine() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 12.v),
+      padding: EdgeInsets.symmetric(vertical: 12.sp),
       decoration: AppDecoration.outlineGray.copyWith(
         borderRadius: BorderRadiusStyle.roundedBorder5,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(height: 9.v),
+          SizedBox(height: 9.sp),
           CustomAppBar(
             title: AppbarTitle(
               text: "lbl_saved_products".tr,
@@ -91,7 +91,7 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
   /// Section Widget
   Widget _buildUnsplashOBaEeEsA() {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 7.v),
+      padding: EdgeInsets.symmetric(vertical: 7.sp),
       decoration: AppDecoration.outlineGray.copyWith(
         borderRadius: BorderRadiusStyle.roundedBorder10,
       ),
@@ -100,14 +100,14 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
         children: [
           CustomImageView(
             imagePath: ImageConstant.imgUnsplashOb2aeee8s4a114x128,
-            height: 114.v,
+            height: 114.sp,
             width: 128.h,
             radius: BorderRadius.circular(
               5.h,
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 4.v),
+            padding: EdgeInsets.only(bottom: 4.sp),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -116,7 +116,7 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
                   children: [
                     Container(
                       width: 131.h,
-                      margin: EdgeInsets.only(top: 1.v),
+                      margin: EdgeInsets.only(top: 1.sp),
                       child: Text(
                         "msg_new_balance_classic".tr,
                         maxLines: 2,
@@ -129,21 +129,21 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
                     ),
                     CustomImageView(
                       imagePath: ImageConstant.imgCloseErrorcontainer20x20,
-                      height: 20.adaptSize,
-                      width: 20.adaptSize,
+                      height: 20.sp,
+                      width: 20.sp,
                       margin: EdgeInsets.only(
                         left: 16.h,
-                        bottom: 23.v,
+                        bottom: 23.sp,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 2.v),
+                SizedBox(height: 2.sp),
                 Text(
                   "msg_obafemi_awolowo".tr,
                   style: CustomTextStyles.bodySmallBlack900_1,
                 ),
-                SizedBox(height: 40.v),
+                SizedBox(height: 40.sp),
                 Text(
                   "lbl_7000".tr,
                   style: CustomTextStyles.labelMediumRobotoBlack900_1,
@@ -170,8 +170,8 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
           groupSeparatorBuilder: (String value) {
             return Padding(
               padding: EdgeInsets.only(
-                top: 47.v,
-                bottom: 3.v,
+                top: 47.sp,
+                bottom: 3.sp,
               ),
               child: Text(
                 value,
@@ -187,7 +187,7 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
             );
           },
           separator: SizedBox(
-            height: 45.v,
+            height: 45.sp,
           ),
         ),
       ),
@@ -199,14 +199,14 @@ class WishlistsScreen extends GetWidget<WishlistsController> {
     return Align(
       alignment: Alignment.bottomCenter,
       child: Padding(
-        padding: EdgeInsets.only(bottom: 107.v),
+        padding: EdgeInsets.only(bottom: 107.sp),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Divider(),
-            SizedBox(height: 184.v),
+            SizedBox(height: 184.sp),
             Divider(),
-            SizedBox(height: 174.v),
+            SizedBox(height: 174.sp),
             Divider(),
           ],
         ),

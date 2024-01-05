@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../models/userbadges_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
@@ -19,7 +21,7 @@ class UserbadgesItemWidget extends StatelessWidget {
       () => RawChip(
         padding: EdgeInsets.symmetric(
           horizontal: 30.h,
-          vertical: 12.v,
+          vertical: 12.sp,
         ),
         showCheckmark: false,
         labelPadding: EdgeInsets.zero,
@@ -27,7 +29,7 @@ class UserbadgesItemWidget extends StatelessWidget {
           userbadgesItemModelObj.talent!.value,
           style: TextStyle(
             color: appTheme.whiteA700,
-            fontSize: 14.fSize,
+            fontSize: 14.sp,
             fontFamily: 'Roboto',
             fontWeight: FontWeight.w500,
           ),

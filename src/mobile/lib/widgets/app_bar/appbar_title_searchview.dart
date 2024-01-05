@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
 import 'package:tradehive/widgets/custom_search_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class AppbarTitleSearchview extends StatelessWidget {

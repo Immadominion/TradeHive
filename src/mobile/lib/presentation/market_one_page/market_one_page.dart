@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../market_one_page/widgets/marketone_item_widget.dart';
 import 'controller/market_one_controller.dart';
 import 'models/market_one_model.dart';
@@ -16,8 +18,6 @@ class MarketOnePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
-
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -25,7 +25,7 @@ class MarketOnePage extends StatelessWidget {
           decoration: AppDecoration.fillWhiteA,
           child: Column(
             children: [
-              SizedBox(height: 35.v),
+              SizedBox(height: 35.sp),
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 21.h),
@@ -33,7 +33,7 @@ class MarketOnePage extends StatelessWidget {
                     () => GridView.builder(
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        mainAxisExtent: 265.v,
+                        mainAxisExtent: 265.sp,
                         crossAxisCount: 2,
                         mainAxisSpacing: 11.h,
                         crossAxisSpacing: 11.h,

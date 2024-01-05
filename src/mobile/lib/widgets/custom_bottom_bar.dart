@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tradehive/core/app_export.dart';
 
 class CustomBottomBar extends StatelessWidget {
@@ -49,7 +50,7 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70.v,
+      height: 70.sp,
       decoration: BoxDecoration(
         color: appTheme.whiteA700,
         boxShadow: [
@@ -81,12 +82,12 @@ class CustomBottomBar extends StatelessWidget {
                 children: [
                   CustomImageView(
                     imagePath: bottomMenuList[index].icon,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
+                    height: 24.sp,
+                    width: 24.sp,
                     color: theme.colorScheme.onPrimaryContainer,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 5.v),
+                    padding: EdgeInsets.only(top: 5.sp),
                     child: Text(
                       bottomMenuList[index].title ?? "",
                       style: theme.textTheme.labelMedium!.copyWith(
@@ -102,12 +103,12 @@ class CustomBottomBar extends StatelessWidget {
                 children: [
                   CustomImageView(
                     imagePath: bottomMenuList[index].activeIcon,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
+                    height: 24.sp,
+                    width: 24.sp,
                     color: theme.colorScheme.primary,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 4.v),
+                    padding: EdgeInsets.only(top: 4.sp),
                     child: Text(
                       bottomMenuList[index].title ?? "",
                       style: CustomTextStyles.labelMediumPrimary.copyWith(

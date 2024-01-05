@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../controller/search_controller.dart';
 import '../models/searchlist_item_model.dart';
 import 'package:flutter/material.dart' hide SearchController;
@@ -30,7 +32,7 @@ class SearchlistItemWidget extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(
             left: 186.h,
-            bottom: 2.v,
+            bottom: 2.sp,
           ),
           child: Obx(
             () => Text(

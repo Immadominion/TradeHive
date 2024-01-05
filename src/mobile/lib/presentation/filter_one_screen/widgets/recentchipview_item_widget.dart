@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../models/recentchipview_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
@@ -23,7 +25,7 @@ class RecentchipviewItemWidget extends StatelessWidget {
         child: RawChip(
           padding: EdgeInsets.symmetric(
             horizontal: 30.h,
-            vertical: 9.v,
+            vertical: 9.sp,
           ),
           showCheckmark: false,
           labelPadding: EdgeInsets.zero,
@@ -33,7 +35,7 @@ class RecentchipviewItemWidget extends StatelessWidget {
               color: (recentchipviewItemModelObj.isSelected?.value ?? false)
                   ? appTheme.whiteA700
                   : appTheme.gray900,
-              fontSize: 14.fSize,
+              fontSize: 14.sp,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w400,
             ),

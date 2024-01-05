@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../controller/notifications_controller.dart';
 import '../models/notifications_item_model.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,7 @@ class NotificationsItemWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 2.v),
+          SizedBox(height: 2.sp),
           Padding(
             padding: EdgeInsets.only(right: 7.h),
             child: Row(
@@ -33,9 +35,9 @@ class NotificationsItemWidget extends StatelessWidget {
                 Obx(
                   () => CustomImageView(
                     imagePath: notificationsItemModelObj.image!.value,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
-                    margin: EdgeInsets.only(bottom: 9.v),
+                    height: 24.sp,
+                    width: 24.sp,
+                    margin: EdgeInsets.only(bottom: 9.sp),
                   ),
                 ),
                 Expanded(
@@ -61,18 +63,18 @@ class NotificationsItemWidget extends StatelessWidget {
                 ),
                 CustomImageView(
                   imagePath: ImageConstant.imgGroup6065Errorcontainer,
-                  height: 15.v,
+                  height: 15.sp,
                   width: 3.h,
                   margin: EdgeInsets.only(
                     left: 61.h,
-                    top: 6.v,
-                    bottom: 12.v,
+                    top: 6.sp,
+                    bottom: 12.sp,
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 5.v),
+          SizedBox(height: 5.sp),
           Padding(
             padding: EdgeInsets.only(left: 36.h),
             child: Obx(

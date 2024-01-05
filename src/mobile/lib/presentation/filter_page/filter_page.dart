@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'controller/filter_controller.dart';
 import 'models/filter_model.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,6 @@ class FilterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             body: Container(
@@ -24,7 +25,7 @@ class FilterPage extends StatelessWidget {
                   _buildSeventeen(),
                   Container(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 19.h, vertical: 43.v),
+                          horizontal: 19.h, vertical: 43.sp),
                       child: Column(children: [
                         Align(
                             alignment: Alignment.centerLeft,
@@ -36,21 +37,23 @@ class FilterPage extends StatelessWidget {
                                     overflow: TextOverflow.ellipsis,
                                     style: theme.textTheme.titleLarge!
                                         .copyWith(height: 1.20)))),
-                        SizedBox(height: 22.v),
+                        SizedBox(height: 22.sp),
                         CustomOutlinedButton(
                             text: "lbl_products".tr,
                             buttonTextStyle: CustomTextStyles.titleMediumMedium,
                             onPressed: () {
                               onTapProducts();
                             }),
-                        SizedBox(height: 18.v),
+                        SizedBox(height: 18.sp),
                         CustomOutlinedButton(
                             text: "lbl_service".tr,
                             buttonTextStyle: CustomTextStyles.titleMediumMedium,
                             onPressed: () {
                               onTapService();
                             }),
-                        SizedBox(height: 5.v)
+                        SizedBox(
+                          height: 5.sp,
+                        ),
                       ]))
                 ]))));
   }
@@ -58,11 +61,11 @@ class FilterPage extends StatelessWidget {
   /// Section Widget
   Widget _buildSeventeen() {
     return Container(
-        padding: EdgeInsets.symmetric(vertical: 14.v),
+        padding: EdgeInsets.symmetric(vertical: 14.sp),
         decoration: AppDecoration.outlineGray
             .copyWith(borderRadius: BorderRadiusStyle.roundedBorder5),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-          SizedBox(height: 5.v),
+          SizedBox(height: 5.sp),
           CustomAppBar(
               title: AppbarSubtitle(
                   text: "msg_choose_listing_type".tr,

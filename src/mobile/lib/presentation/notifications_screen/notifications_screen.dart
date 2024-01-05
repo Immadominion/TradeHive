@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../notifications_screen/widgets/notifications_item_widget.dart';
 import 'controller/notifications_controller.dart';
 import 'models/notifications_item_model.dart';
@@ -12,7 +14,6 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
@@ -20,9 +21,9 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
                 child: Column(children: [
                   _buildTwenty(),
                   Container(
-                      height: 932.v,
+                      height: 932.sp,
                       width: double.maxFinite,
-                      padding: EdgeInsets.symmetric(vertical: 27.v),
+                      padding: EdgeInsets.symmetric(vertical: 27.sp),
                       child: Stack(alignment: Alignment.topCenter, children: [
                         SizedBox(
                             width: double.maxFinite,
@@ -35,32 +36,32 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           _buildNotifications(),
-                                          SizedBox(height: 21.v),
+                                          SizedBox(height: 21.sp),
                                           _buildFortyNine(),
-                                          SizedBox(height: 43.v),
+                                          SizedBox(height: 43.sp),
                                           _buildFifty(),
-                                          SizedBox(height: 43.v),
+                                          SizedBox(height: 43.sp),
                                           _buildFiftyOne()
                                         ])))),
                         Align(
                             alignment: Alignment.topCenter,
                             child: Padding(
-                                padding: EdgeInsets.only(top: 71.v),
+                                padding: EdgeInsets.only(top: 71.sp),
                                 child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Divider(),
-                                      SizedBox(height: 87.v),
+                                      SizedBox(height: 87.sp),
                                       Divider(),
-                                      SizedBox(height: 103.v),
+                                      SizedBox(height: 103.sp),
                                       Divider(),
-                                      SizedBox(height: 114.v),
+                                      SizedBox(height: 114.sp),
                                       Divider(),
-                                      SizedBox(height: 95.v),
+                                      SizedBox(height: 95.sp),
                                       Divider(),
-                                      SizedBox(height: 111.v),
+                                      SizedBox(height: 111.sp),
                                       Divider(),
-                                      SizedBox(height: 73.v),
+                                      SizedBox(height: 73.sp),
                                       Divider()
                                     ])))
                       ]))
@@ -70,16 +71,16 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
   /// Section Widget
   Widget _buildTwenty() {
     return Container(
-        padding: EdgeInsets.symmetric(vertical: 12.v),
+        padding: EdgeInsets.symmetric(vertical: 12.sp),
         decoration: AppDecoration.outlineGray
             .copyWith(borderRadius: BorderRadiusStyle.roundedBorder5),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-          SizedBox(height: 9.v),
+          SizedBox(height: 9.sp),
           CustomAppBar(
               leadingWidth: 40.h,
               leading: AppbarLeadingImage(
                   imagePath: ImageConstant.imgArrowLeft,
-                  margin: EdgeInsets.only(left: 19.h, top: 2.v),
+                  margin: EdgeInsets.only(left: 19.h, top: 2.sp),
                   onTap: () {
                     onTapArrowLeft();
                   }),
@@ -97,12 +98,12 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
             shrinkWrap: true,
             separatorBuilder: (context, index) {
               return Padding(
-                  padding: EdgeInsets.symmetric(vertical: 1.0.v),
+                  padding: EdgeInsets.symmetric(vertical: 1.0.sp),
                   child: SizedBox(
                       width: double.maxFinite,
                       child: Divider(
-                          height: 1.v,
-                          thickness: 1.v,
+                          height: 1.sp,
+                          thickness: 1.sp,
                           color: appTheme.gray100)));
             },
             itemCount: controller
@@ -117,11 +118,11 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
   /// Section Widget
   Widget _buildFortyNine() {
     return SizedBox(
-        height: 69.v,
+        height: 69.sp,
         width: 314.h,
         child: Stack(alignment: Alignment.centerRight, children: [
           Padding(
-              padding: EdgeInsets.only(top: 9.v, bottom: 36.v),
+              padding: EdgeInsets.only(top: 9.sp, bottom: 36.sp),
               child: _buildFiftyTwo()),
           Align(
               alignment: Alignment.centerRight,
@@ -137,7 +138,7 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
                                 maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                                 style: CustomTextStyles.bodyMediumBlack900)),
-                        SizedBox(height: 5.v),
+                        SizedBox(height: 5.sp),
                         Text("lbl_2_hours_ago".tr,
                             style: CustomTextStyles.bodySmallInter)
                       ])))
@@ -147,11 +148,11 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
   /// Section Widget
   Widget _buildFifty() {
     return SizedBox(
-        height: 69.v,
+        height: 69.sp,
         width: 314.h,
         child: Stack(alignment: Alignment.center, children: [
           Padding(
-              padding: EdgeInsets.only(top: 9.v, bottom: 36.v),
+              padding: EdgeInsets.only(top: 9.sp, bottom: 36.sp),
               child: _buildFiftyTwo()),
           Align(
               alignment: Alignment.center,
@@ -167,7 +168,7 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
                                 maxLines: 3,
                                 overflow: TextOverflow.ellipsis,
                                 style: CustomTextStyles.bodyMediumBlack900)),
-                        SizedBox(height: 5.v),
+                        SizedBox(height: 5.sp),
                         Text("lbl_2_hours_ago".tr,
                             style: CustomTextStyles.bodySmallInter)
                       ])))
@@ -177,11 +178,11 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
   /// Section Widget
   Widget _buildFiftyOne() {
     return SizedBox(
-        height: 52.v,
+        height: 52.sp,
         width: 314.h,
         child: Stack(alignment: Alignment.center, children: [
           Padding(
-              padding: EdgeInsets.only(top: 1.v, bottom: 27.v),
+              padding: EdgeInsets.only(top: 1.sp, bottom: 27.sp),
               child: _buildFiftyTwo()),
           Align(
               alignment: Alignment.center,
@@ -197,7 +198,7 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: CustomTextStyles.bodyMediumBlack900)),
-                        SizedBox(height: 2.v),
+                        SizedBox(height: 2.sp),
                         Text("lbl_2_hours_ago".tr,
                             style: CustomTextStyles.bodySmallInter)
                       ])))
@@ -208,14 +209,16 @@ class NotificationsScreen extends GetWidget<NotificationsController> {
   Widget _buildFiftyTwo() {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       CustomImageView(
-          imagePath: ImageConstant.imgRefresh,
-          height: 24.adaptSize,
-          width: 24.adaptSize),
+          imagePath: ImageConstant.imgRefresh, height: 24.sp, width: 24.sp),
       CustomImageView(
-          imagePath: ImageConstant.imgGroup6065Errorcontainer,
-          height: 15.v,
-          width: 3.h,
-          margin: EdgeInsets.only(top: 6.v, bottom: 3.v))
+        imagePath: ImageConstant.imgGroup6065Errorcontainer,
+        height: 15.sp,
+        width: 3.h,
+        margin: EdgeInsets.only(
+          top: 6.sp,
+          bottom: 3.sp,
+        ),
+      )
     ]);
   }
 

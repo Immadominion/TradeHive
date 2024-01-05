@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
 import 'package:tradehive/widgets/base_button.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomElevatedButton extends BaseButton {
   CustomElevatedButton({
@@ -46,7 +47,7 @@ class CustomElevatedButton extends BaseButton {
   }
 
   Widget get buildElevatedButtonWidget => Container(
-        height: this.height ?? 50.v,
+        height: this.height ?? 50.sp,
         width: this.width ?? double.maxFinite,
         margin: margin,
         decoration: decoration,

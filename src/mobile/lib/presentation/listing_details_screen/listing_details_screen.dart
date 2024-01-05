@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'controller/listing_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
@@ -13,23 +15,22 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             body: SizedBox(
                 width: double.maxFinite,
                 child: Column(mainAxisSize: MainAxisSize.min, children: [
                   _buildThirtyEight(),
-                  SizedBox(height: 13.v),
+                  SizedBox(height: 13.sp),
                   Expanded(
                       child: SingleChildScrollView(
                           child: Padding(
-                              padding: EdgeInsets.only(bottom: 42.v),
+                              padding: EdgeInsets.only(bottom: 42.sp),
                               child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     SizedBox(
-                                        height: 587.v,
+                                        height: 587.sp,
                                         width: double.maxFinite,
                                         child: Stack(
                                             alignment: Alignment.topCenter,
@@ -49,7 +50,7 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                           children: [
                                                             _buildUnsplashTllhnJo(),
                                                             SizedBox(
-                                                                height: 43.v),
+                                                                height: 43.sp),
                                                             Container(
                                                                 width: 253.h,
                                                                 margin: EdgeInsets
@@ -68,7 +69,7 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                                     style: CustomTextStyles
                                                                         .titleLargeBold)),
                                                             SizedBox(
-                                                                height: 7.v),
+                                                                height: 7.sp),
                                                             Padding(
                                                                 padding: EdgeInsets
                                                                     .only(
@@ -81,7 +82,7 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                                     style: CustomTextStyles
                                                                         .labelLargeInter)),
                                                             SizedBox(
-                                                                height: 3.v),
+                                                                height: 3.sp),
                                                             Container(
                                                                 width: 320.h,
                                                                 margin: EdgeInsets
@@ -101,7 +102,7 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                                             height:
                                                                                 1.50))),
                                                             SizedBox(
-                                                                height: 40.v),
+                                                                height: 40.sp),
                                                             Padding(
                                                                 padding: EdgeInsets
                                                                     .only(
@@ -113,7 +114,7 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                                     style: CustomTextStyles
                                                                         .titleMediumMedium)),
                                                             SizedBox(
-                                                                height: 9.v),
+                                                                height: 9.sp),
                                                             Padding(
                                                                 padding: EdgeInsets
                                                                     .only(
@@ -122,14 +123,18 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                                 child: Row(
                                                                     children: [
                                                                       CustomImageView(
-                                                                          imagePath: ImageConstant
-                                                                              .imgProfile,
-                                                                          height: 32
-                                                                              .adaptSize,
-                                                                          width: 32
-                                                                              .adaptSize,
-                                                                          margin:
-                                                                              EdgeInsets.only(bottom: 4.v)),
+                                                                        imagePath:
+                                                                            ImageConstant.imgProfile,
+                                                                        height:
+                                                                            32.sp,
+                                                                        width: 32
+                                                                            .sp,
+                                                                        margin:
+                                                                            EdgeInsets.only(
+                                                                          bottom:
+                                                                              4.sp,
+                                                                        ),
+                                                                      ),
                                                                       Padding(
                                                                           padding: EdgeInsets.only(
                                                                               left: 8
@@ -138,12 +143,12 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Text("lbl_adejoh_moses".tr, style: theme.textTheme.titleMedium),
-                                                                                SizedBox(height: 1.v),
+                                                                                SizedBox(height: 1.sp),
                                                                                 Text("msg_obafemi_awolowo".tr, style: theme.textTheme.labelLarge)
                                                                               ]))
                                                                     ])),
                                                             SizedBox(
-                                                                height: 4.v),
+                                                                height: 4.sp),
                                                             Align(
                                                                 alignment:
                                                                     Alignment
@@ -168,7 +173,7 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                                             .bodySmall12
                                                                             .copyWith(height: 1.50)))),
                                                             SizedBox(
-                                                                height: 5.v),
+                                                                height: 5.sp),
                                                             Padding(
                                                                 padding: EdgeInsets
                                                                     .only(
@@ -186,9 +191,9 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                                           imagePath: ImageConstant
                                                                               .imgVuesaxOutlineLike,
                                                                           height: 12
-                                                                              .adaptSize,
+                                                                              .sp,
                                                                           width: 12
-                                                                              .adaptSize,
+                                                                              .sp,
                                                                           margin:
                                                                               EdgeInsets.only(left: 8.h)),
                                                                       Padding(
@@ -196,16 +201,16 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                                               left: 2
                                                                                   .h,
                                                                               top: 2
-                                                                                  .v),
+                                                                                  .sp),
                                                                           child: Text(
                                                                               "lbl_20".tr,
                                                                               style: theme.textTheme.labelSmall))
                                                                     ])),
                                                             SizedBox(
-                                                                height: 8.v),
+                                                                height: 8.sp),
                                                             _buildGiveAReview(),
                                                             SizedBox(
-                                                                height: 18.v),
+                                                                height: 18.sp),
                                                             Text(
                                                                 "msg_view_more_reviews"
                                                                     .tr,
@@ -214,9 +219,9 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                                           ]))),
                                               _buildLineTen()
                                             ])),
-                                    SizedBox(height: 20.v),
+                                    SizedBox(height: 20.sp),
                                     Divider(),
-                                    SizedBox(height: 22.v),
+                                    SizedBox(height: 22.sp),
                                     CustomElevatedButton(
                                         text: "lbl_chat".tr,
                                         margin: EdgeInsets.only(
@@ -227,7 +232,9 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                                           onTapChat();
                                         },
                                         alignment: Alignment.centerLeft),
-                                    SizedBox(height: 2.v)
+                                    SizedBox(
+                                      height: 2.sp,
+                                    ),
                                   ]))))
                 ])),
             floatingActionButton: _buildFloatingActionButton()));
@@ -236,28 +243,28 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
   /// Section Widget
   Widget _buildThirtyEight() {
     return SizedBox(
-        height: 267.v,
+        height: 267.sp,
         width: double.maxFinite,
         child: Stack(alignment: Alignment.topCenter, children: [
           CustomImageView(
               imagePath: ImageConstant.imgUnsplashOb2aeee8s4a267x360,
-              height: 267.v,
+              height: 267.sp,
               width: 360.h,
               radius: BorderRadius.vertical(bottom: Radius.circular(10.h)),
               alignment: Alignment.center),
           CustomAppBar(
-              height: 51.v,
+              height: 51.sp,
               leadingWidth: 48.h,
               leading: AppbarLeadingIconbutton(
                   imagePath: ImageConstant.imgGroup6074,
-                  margin: EdgeInsets.only(left: 16.h, bottom: 4.v),
+                  margin: EdgeInsets.only(left: 16.h, bottom: 4.sp),
                   onTap: () {
                     onTapIconButton();
                   }),
               actions: [
                 AppbarTrailingIconbuttonOne(
                     imagePath: ImageConstant.imgGroup37,
-                    margin: EdgeInsets.only(left: 23.h, top: 3.v, right: 23.h))
+                    margin: EdgeInsets.only(left: 23.h, top: 3.sp, right: 23.h))
               ])
         ]));
   }
@@ -271,11 +278,14 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
           Expanded(
               child: Row(children: [
             CustomImageView(
-                imagePath: ImageConstant.imgUnsplash3tll97hnjo52x52,
-                height: 52.adaptSize,
-                width: 52.adaptSize,
-                radius: BorderRadius.circular(26.h),
-                margin: EdgeInsets.only(bottom: 1.v)),
+              imagePath: ImageConstant.imgUnsplash3tll97hnjo52x52,
+              height: 52.sp,
+              width: 52.sp,
+              radius: BorderRadius.circular(26.h),
+              margin: EdgeInsets.only(
+                bottom: 1.sp,
+              ),
+            ),
             Padding(
                 padding: EdgeInsets.only(left: 9.h),
                 child: Column(
@@ -285,21 +295,21 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
                           style: CustomTextStyles.titleMediumInter_1),
                       Text("msg_obafemi_awolowo".tr,
                           style: CustomTextStyles.labelLargeInter_1),
-                      SizedBox(height: 2.v),
+                      SizedBox(height: 2.sp),
                       Text("lbl_4_5".tr,
                           style: CustomTextStyles.labelLargeInter_1)
                     ]))
           ])),
           Container(
-              height: 25.adaptSize,
-              width: 25.adaptSize,
-              margin: EdgeInsets.only(left: 69.h, top: 14.v, bottom: 14.v),
+              height: 25.sp,
+              width: 25.sp,
+              margin: EdgeInsets.only(left: 69.h, top: 14.sp, bottom: 14.sp),
               decoration: AppDecoration.fillGray
                   .copyWith(borderRadius: BorderRadiusStyle.roundedBorder10),
               child: CustomImageView(
                   imagePath: ImageConstant.imgPlus,
-                  height: 24.adaptSize,
-                  width: 24.adaptSize,
+                  height: 24.sp,
+                  width: 24.sp,
                   alignment: Alignment.topLeft))
         ]));
   }
@@ -311,7 +321,7 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
         child: Obx(() => CustomCheckboxButton(
             text: "lbl_give_a_review".tr,
             value: controller.giveAReview.value,
-            padding: EdgeInsets.symmetric(vertical: 3.v),
+            padding: EdgeInsets.symmetric(vertical: 3.sp),
             onChange: (value) {
               controller.giveAReview.value = value;
             })));
@@ -322,10 +332,10 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
     return Align(
         alignment: Alignment.topCenter,
         child: Padding(
-            padding: EdgeInsets.only(top: 77.v),
+            padding: EdgeInsets.only(top: 77.sp),
             child: Column(
                 mainAxisSize: MainAxisSize.min,
-                children: [Divider(), SizedBox(height: 282.v), Divider()])));
+                children: [Divider(), SizedBox(height: 282.sp), Divider()])));
   }
 
   /// Section Widget
@@ -335,7 +345,7 @@ class ListingDetailsScreen extends GetWidget<ListingDetailsController> {
         width: 53,
         backgroundColor: appTheme.indigo50,
         child: CustomImageView(
-            imagePath: ImageConstant.imgCall, height: 26.5.v, width: 26.5.h));
+            imagePath: ImageConstant.imgCall, height: 26.5.sp, width: 26.5.h));
   }
 
   /// Navigates to the marketContainerScreen when the action is triggered.

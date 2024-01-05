@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../controller/chat_controller.dart';
 import '../models/chat_item_model.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +23,7 @@ class ChatItemWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 15.h,
-        vertical: 11.v,
+        vertical: 11.sp,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,18 +31,18 @@ class ChatItemWidget extends StatelessWidget {
         children: [
           CustomImageView(
             imagePath: ImageConstant.imgProfile26x26,
-            height: 42.adaptSize,
-            width: 42.adaptSize,
+            height: 42.sp,
+            width: 42.sp,
             margin: EdgeInsets.only(
-              top: 4.v,
-              bottom: 13.v,
+              top: 4.sp,
+              bottom: 13.sp,
             ),
           ),
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(
                 left: 11.h,
-                bottom: 7.v,
+                bottom: 7.sp,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,7 +57,7 @@ class ChatItemWidget extends StatelessWidget {
                       ),
                       Spacer(),
                       Padding(
-                        padding: EdgeInsets.only(top: 2.v),
+                        padding: EdgeInsets.only(top: 2.sp),
                         child: Obx(
                           () => Text(
                             chatItemModelObj.time!.value,
@@ -64,12 +66,12 @@ class ChatItemWidget extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        height: 8.adaptSize,
-                        width: 8.adaptSize,
+                        height: 8.sp,
+                        width: 8.sp,
                         margin: EdgeInsets.only(
                           left: 7.h,
-                          top: 4.v,
-                          bottom: 6.v,
+                          top: 4.sp,
+                          bottom: 6.sp,
                         ),
                         decoration: BoxDecoration(
                           color: theme.colorScheme.primary,
@@ -86,7 +88,7 @@ class ChatItemWidget extends StatelessWidget {
                       style: theme.textTheme.bodySmall,
                     ),
                   ),
-                  SizedBox(height: 6.v),
+                  SizedBox(height: 6.sp),
                   Obx(
                     () => Text(
                       chatItemModelObj.thanksforthepatronage!.value,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -11,11 +12,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.centerTitle,
     this.actions,
+    this.width,
   }) : super(
           key: key,
         );
 
   final double? height;
+  final double? width;
 
   final double? leadingWidth;
 
@@ -31,7 +34,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      toolbarHeight: height ?? 24.v,
+      toolbarHeight: height ?? 24.sp,
       automaticallyImplyLeading: false,
       backgroundColor: Colors.transparent,
       leadingWidth: leadingWidth ?? 0,
@@ -45,7 +48,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size(
-        mediaQueryData.size.width,
-        height ?? 24.v,
+        width ?? double.infinity,
+        height ?? 24.sp,
       );
 }

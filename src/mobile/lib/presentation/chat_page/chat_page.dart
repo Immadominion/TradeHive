@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../chat_page/widgets/chat_item_widget.dart';
 import 'controller/chat_controller.dart';
 import 'models/chat_item_model.dart';
@@ -16,12 +18,11 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             appBar: _buildAppBar(),
             body: SizedBox(
-                height: 640.v,
+                height: 640.sp,
                 width: double.maxFinite,
                 child: Stack(alignment: Alignment.bottomCenter, children: [
                   Align(
@@ -52,12 +53,12 @@ class ChatPage extends StatelessWidget {
                                                   child: Text("lbl_6_07_pm".tr,
                                                       style: CustomTextStyles
                                                           .bodySmall12))),
-                                          SizedBox(height: 40.v),
+                                          SizedBox(height: 40.sp),
                                           Align(
                                               alignment: Alignment.centerRight,
                                               child: Container(
-                                                  height: 8.adaptSize,
-                                                  width: 8.adaptSize,
+                                                  height: 8.sp,
+                                                  width: 8.sp,
                                                   margin: EdgeInsets.only(
                                                       right: 22.h),
                                                   decoration: BoxDecoration(
@@ -66,12 +67,12 @@ class ChatPage extends StatelessWidget {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               4.h)))),
-                                          SizedBox(height: 30.v),
+                                          SizedBox(height: 30.sp),
                                           CustomImageView(
                                               imagePath:
                                                   ImageConstant.imgProfile26x26,
-                                              height: 42.adaptSize,
-                                              width: 42.adaptSize,
+                                              height: 42.sp,
+                                              width: 42.sp,
                                               margin:
                                                   EdgeInsets.only(left: 20.h)),
                                           Padding(
@@ -81,7 +82,7 @@ class ChatPage extends StatelessWidget {
                                                   "msg_obafemi_awolowo".tr,
                                                   style: theme
                                                       .textTheme.bodySmall)),
-                                          SizedBox(height: 6.v),
+                                          SizedBox(height: 6.sp),
                                           Padding(
                                               padding:
                                                   EdgeInsets.only(left: 73.h),
@@ -91,34 +92,34 @@ class ChatPage extends StatelessWidget {
                                                   style: CustomTextStyles
                                                       .bodySmall12))
                                         ]))),
-                            SizedBox(height: 45.v),
+                            SizedBox(height: 45.sp),
                             _buildTwentyOne(),
-                            SizedBox(height: 45.v),
+                            SizedBox(height: 45.sp),
                             _buildTwentyThree(),
-                            SizedBox(height: 45.v),
+                            SizedBox(height: 45.sp),
                             _buildTwenty3(),
-                            SizedBox(height: 45.v),
+                            SizedBox(height: 45.sp),
                             _buildTwenty5()
                           ]))),
                   Align(
                       alignment: Alignment.bottomCenter,
                       child: Column(mainAxisSize: MainAxisSize.min, children: [
                         Divider(),
-                        SizedBox(height: 97.v),
+                        SizedBox(height: 97.sp),
                         Divider(),
-                        SizedBox(height: 97.v),
+                        SizedBox(height: 97.sp),
                         Divider(),
-                        SizedBox(height: 97.v),
+                        SizedBox(height: 97.sp),
                         Divider(),
-                        SizedBox(height: 97.v),
+                        SizedBox(height: 97.sp),
                         Divider(),
-                        SizedBox(height: 97.v),
+                        SizedBox(height: 97.sp),
                         Divider(),
-                        SizedBox(height: 97.v),
+                        SizedBox(height: 97.sp),
                         Divider(),
-                        SizedBox(height: 98.v),
+                        SizedBox(height: 98.sp),
                         Divider(),
-                        SizedBox(height: 99.v),
+                        SizedBox(height: 99.sp),
                         Divider()
                       ]))
                 ]))));
@@ -127,15 +128,21 @@ class ChatPage extends StatelessWidget {
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        height: 56.v,
+        height: 56.sp,
         title: AppbarTitleSearchview(
             margin: EdgeInsets.only(left: 20.h),
             hintText: "lbl_search_listings".tr,
             controller: controller.searchController),
         actions: [
           AppbarTrailingIconbuttonTwo(
-              imagePath: ImageConstant.imgGroup6034,
-              margin: EdgeInsets.fromLTRB(9.h, 6.v, 19.h, 6.v))
+            imagePath: ImageConstant.imgGroup6034,
+            margin: EdgeInsets.fromLTRB(
+              9.h,
+              6.sp,
+              19.h,
+              6.sp,
+            ),
+          )
         ]);
   }
 
@@ -147,12 +154,12 @@ class ChatPage extends StatelessWidget {
             shrinkWrap: true,
             separatorBuilder: (context, index) {
               return Padding(
-                  padding: EdgeInsets.symmetric(vertical: 2.5.v),
+                  padding: EdgeInsets.symmetric(vertical: 2.5.sp),
                   child: SizedBox(
                       width: double.maxFinite,
                       child: Divider(
-                          height: 1.v,
-                          thickness: 1.v,
+                          height: 1.sp,
+                          thickness: 1.sp,
                           color: appTheme.gray100)));
             },
             itemCount: controller.chatModelObj.value.chatItemList.value.length,
@@ -174,10 +181,14 @@ class ChatPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomImageView(
-                  imagePath: ImageConstant.imgProfile26x26,
-                  height: 42.adaptSize,
-                  width: 42.adaptSize,
-                  margin: EdgeInsets.only(top: 4.v, bottom: 6.v)),
+                imagePath: ImageConstant.imgProfile26x26,
+                height: 42.sp,
+                width: 42.sp,
+                margin: EdgeInsets.only(
+                  top: 4.sp,
+                  bottom: 6.sp,
+                ),
+              ),
               Padding(
                   padding: EdgeInsets.only(left: 11.h),
                   child: _buildTwenty(
@@ -186,13 +197,13 @@ class ChatPage extends StatelessWidget {
                       userPatronage: "msg_thanks_for_the_patronage".tr)),
               Spacer(),
               Padding(
-                  padding: EdgeInsets.only(top: 2.v, bottom: 35.v),
+                  padding: EdgeInsets.only(top: 2.sp, bottom: 35.sp),
                   child: Text("lbl_6_07_pm".tr,
                       style: CustomTextStyles.bodySmall12)),
               Container(
-                  height: 8.adaptSize,
-                  width: 8.adaptSize,
-                  margin: EdgeInsets.only(left: 7.h, top: 4.v, bottom: 40.v),
+                  height: 8.sp,
+                  width: 8.sp,
+                  margin: EdgeInsets.only(left: 7.h, top: 4.sp, bottom: 40.sp),
                   decoration: BoxDecoration(
                       color: theme.colorScheme.primary,
                       borderRadius: BorderRadius.circular(4.h)))
@@ -210,10 +221,14 @@ class ChatPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomImageView(
-                  imagePath: ImageConstant.imgProfile26x26,
-                  height: 42.adaptSize,
-                  width: 42.adaptSize,
-                  margin: EdgeInsets.only(top: 4.v, bottom: 6.v)),
+                imagePath: ImageConstant.imgProfile26x26,
+                height: 42.sp,
+                width: 42.sp,
+                margin: EdgeInsets.only(
+                  top: 4.sp,
+                  bottom: 6.sp,
+                ),
+              ),
               Padding(
                   padding: EdgeInsets.only(left: 11.h),
                   child: _buildTwenty(
@@ -222,13 +237,13 @@ class ChatPage extends StatelessWidget {
                       userPatronage: "msg_thanks_for_the_patronage".tr)),
               Spacer(),
               Padding(
-                  padding: EdgeInsets.only(top: 2.v, bottom: 35.v),
+                  padding: EdgeInsets.only(top: 2.sp, bottom: 35.sp),
                   child: Text("lbl_6_07_pm".tr,
                       style: CustomTextStyles.bodySmall12)),
               Container(
-                  height: 8.adaptSize,
-                  width: 8.adaptSize,
-                  margin: EdgeInsets.only(left: 7.h, top: 4.v, bottom: 40.v),
+                  height: 8.sp,
+                  width: 8.sp,
+                  margin: EdgeInsets.only(left: 7.h, top: 4.sp, bottom: 40.sp),
                   decoration: BoxDecoration(
                       color: theme.colorScheme.primary,
                       borderRadius: BorderRadius.circular(4.h)))
@@ -246,10 +261,14 @@ class ChatPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomImageView(
-                  imagePath: ImageConstant.imgProfile26x26,
-                  height: 42.adaptSize,
-                  width: 42.adaptSize,
-                  margin: EdgeInsets.only(top: 4.v, bottom: 6.v)),
+                imagePath: ImageConstant.imgProfile26x26,
+                height: 42.sp,
+                width: 42.sp,
+                margin: EdgeInsets.only(
+                  top: 4.sp,
+                  bottom: 6.sp,
+                ),
+              ),
               Padding(
                   padding: EdgeInsets.only(left: 11.h),
                   child: _buildTwenty(
@@ -258,13 +277,13 @@ class ChatPage extends StatelessWidget {
                       userPatronage: "msg_thanks_for_the_patronage".tr)),
               Spacer(),
               Padding(
-                  padding: EdgeInsets.only(top: 2.v, bottom: 35.v),
+                  padding: EdgeInsets.only(top: 2.sp, bottom: 35.sp),
                   child: Text("lbl_6_07_pm".tr,
                       style: CustomTextStyles.bodySmall12)),
               Container(
-                  height: 8.adaptSize,
-                  width: 8.adaptSize,
-                  margin: EdgeInsets.only(left: 7.h, top: 4.v, bottom: 40.v),
+                  height: 8.sp,
+                  width: 8.sp,
+                  margin: EdgeInsets.only(left: 7.h, top: 4.sp, bottom: 40.sp),
                   decoration: BoxDecoration(
                       color: theme.colorScheme.primary,
                       borderRadius: BorderRadius.circular(4.h)))
@@ -282,10 +301,14 @@ class ChatPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomImageView(
-                  imagePath: ImageConstant.imgProfile26x26,
-                  height: 42.adaptSize,
-                  width: 42.adaptSize,
-                  margin: EdgeInsets.only(top: 4.v, bottom: 6.v)),
+                imagePath: ImageConstant.imgProfile26x26,
+                height: 42.sp,
+                width: 42.sp,
+                margin: EdgeInsets.only(
+                  top: 4.sp,
+                  bottom: 6.sp,
+                ),
+              ),
               Padding(
                   padding: EdgeInsets.only(left: 11.h),
                   child: _buildTwenty(
@@ -294,13 +317,13 @@ class ChatPage extends StatelessWidget {
                       userPatronage: "msg_thanks_for_the_patronage".tr)),
               Spacer(),
               Padding(
-                  padding: EdgeInsets.only(top: 2.v, bottom: 35.v),
+                  padding: EdgeInsets.only(top: 2.sp, bottom: 35.sp),
                   child: Text("lbl_6_07_pm".tr,
                       style: CustomTextStyles.bodySmall12)),
               Container(
-                  height: 8.adaptSize,
-                  width: 8.adaptSize,
-                  margin: EdgeInsets.only(left: 7.h, top: 4.v, bottom: 40.v),
+                  height: 8.sp,
+                  width: 8.sp,
+                  margin: EdgeInsets.only(left: 7.h, top: 4.sp, bottom: 40.sp),
                   decoration: BoxDecoration(
                       color: theme.colorScheme.primary,
                       borderRadius: BorderRadius.circular(4.h)))
@@ -320,7 +343,7 @@ class ChatPage extends StatelessWidget {
       Text(userMessage,
           style: theme.textTheme.bodySmall!
               .copyWith(color: appTheme.black900.withOpacity(0.85))),
-      SizedBox(height: 6.v),
+      SizedBox(height: 6.sp),
       Text(userPatronage,
           style: CustomTextStyles.bodySmall12
               .copyWith(color: appTheme.black900.withOpacity(0.85)))

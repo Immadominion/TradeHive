@@ -3,7 +3,10 @@ class ImageConstant {
   static String imagePath = 'assets/images';
 
   // HiveWelcomeScreen images
-  static String imgImagePlaceholder = '$imagePath/img_image_placeholder.png';
+  static String imgImagePlaceholder = '$imagePath/last_image.png';
+  static String imgImagePlaceholder1 = '$imagePath/trade_student.png';
+  static String imgImagePlaceholder2 = '$imagePath/deals.png';
+  static String imgImagePlaceholder3 = '$imagePath/image_two.png';
 
   // HiveLogin images
   static String imgGroup67 = '$imagePath/img_group_67.svg';

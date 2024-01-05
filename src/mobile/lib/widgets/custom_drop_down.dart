@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tradehive/core/app_export.dart';
 
 class CustomDropDown extends StatelessWidget {
@@ -110,8 +111,8 @@ class CustomDropDown extends StatelessWidget {
         contentPadding: contentPadding ??
             EdgeInsets.only(
               left: 11.h,
-              top: 11.v,
-              bottom: 11.v,
+              top: 11.sp,
+              bottom: 11.sp,
             ),
         fillColor: fillColor,
         filled: filled,

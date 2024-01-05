@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'controller/sell_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
@@ -18,7 +20,6 @@ class SellScreen extends GetWidget<SellController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -28,63 +29,63 @@ class SellScreen extends GetWidget<SellController> {
                     width: double.maxFinite,
                     child: Column(children: [
                       _buildTwentyOne(),
-                      SizedBox(height: 23.v),
+                      SizedBox(height: 23.sp),
                       Expanded(
                           child: SingleChildScrollView(
                               child: Padding(
                                   padding: EdgeInsets.only(
-                                      left: 20.h, right: 20.h, bottom: 5.v),
+                                      left: 20.h, right: 20.h, bottom: 5.sp),
                                   child: Column(children: [
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Text("lbl_category".tr,
                                             style: theme.textTheme.titleSmall)),
-                                    SizedBox(height: 7.v),
+                                    SizedBox(height: 7.sp),
                                     _buildTextbooksButton(),
-                                    SizedBox(height: 25.v),
+                                    SizedBox(height: 25.sp),
                                     _buildTitleEditText(),
-                                    SizedBox(height: 7.v),
+                                    SizedBox(height: 7.sp),
                                     _buildPleaseProvideA(
                                         userInputText:
                                             "msg_please_write_a_clear".tr,
                                         userInputLabel: "lbl_0_60".tr),
-                                    SizedBox(height: 23.v),
+                                    SizedBox(height: 23.sp),
                                     _buildDescriptionEditText(),
-                                    SizedBox(height: 8.v),
+                                    SizedBox(height: 8.sp),
                                     _buildPleaseProvideA(
                                         userInputText:
                                             "msg_please_provide_a".tr,
                                         userInputLabel: "lbl_0_60".tr),
-                                    SizedBox(height: 24.v),
+                                    SizedBox(height: 24.sp),
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Text("lbl_institution".tr,
                                             style: theme.textTheme.titleSmall)),
-                                    SizedBox(height: 8.v),
+                                    SizedBox(height: 8.sp),
                                     _buildPlayEditText(),
-                                    SizedBox(height: 25.v),
+                                    SizedBox(height: 25.sp),
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Text("lbl_condition".tr,
                                             style: theme.textTheme.titleSmall)),
-                                    SizedBox(height: 8.v),
+                                    SizedBox(height: 8.sp),
                                     _buildConditionEditText(),
-                                    SizedBox(height: 26.v),
+                                    SizedBox(height: 26.sp),
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Text(
                                             "msg_add_at_least_1_photo".tr,
                                             style: CustomTextStyles
                                                 .labelLargeInter_1)),
-                                    SizedBox(height: 7.v),
+                                    SizedBox(height: 7.sp),
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Container(
-                                            height: 69.v,
+                                            height: 69.sp,
                                             width: 73.h,
                                             padding: EdgeInsets.symmetric(
                                                 horizontal: 26.h,
-                                                vertical: 23.v),
+                                                vertical: 23.sp),
                                             decoration: AppDecoration
                                                 .fillGray100
                                                 .copyWith(
@@ -94,11 +95,11 @@ class SellScreen extends GetWidget<SellController> {
                                             child: CustomImageView(
                                                 imagePath: ImageConstant
                                                     .imgPlusPrimary,
-                                                height: 19.adaptSize,
-                                                width: 19.adaptSize,
+                                                height: 19.sp,
+                                                width: 19.sp,
                                                 alignment:
                                                     Alignment.bottomCenter))),
-                                    SizedBox(height: 7.v),
+                                    SizedBox(height: 7.sp),
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Container(
@@ -112,31 +113,31 @@ class SellScreen extends GetWidget<SellController> {
                                                 style: CustomTextStyles
                                                     .bodySmallInter
                                                     .copyWith(height: 1.50)))),
-                                    SizedBox(height: 24.v),
+                                    SizedBox(height: 24.sp),
                                     _buildPlayEditText1(),
-                                    SizedBox(height: 7.v),
+                                    SizedBox(height: 7.sp),
                                     _buildPleaseProvideA(
                                         userInputText:
                                             "msg_choose_the_preferred".tr,
                                         userInputLabel: "lbl_0_60".tr),
-                                    SizedBox(height: 23.v),
+                                    SizedBox(height: 23.sp),
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Text("msg_custom_attributes".tr,
                                             style: theme.textTheme.titleSmall)),
-                                    SizedBox(height: 8.v),
+                                    SizedBox(height: 8.sp),
                                     _buildPlayEditText2(),
-                                    SizedBox(height: 26.v),
+                                    SizedBox(height: 26.sp),
                                     Align(
                                         alignment: Alignment.centerLeft,
                                         child: Text(
                                             "msg_pricing_and_payments".tr,
                                             style: theme.textTheme.titleSmall)),
-                                    SizedBox(height: 7.v),
+                                    SizedBox(height: 7.sp),
                                     _buildLanguageEditText(),
-                                    SizedBox(height: 7.v),
+                                    SizedBox(height: 7.sp),
                                     _buildNegotiableCheckBox(),
-                                    SizedBox(height: 116.v),
+                                    SizedBox(height: 116.sp),
                                     _buildPublishButton()
                                   ]))))
                     ])))));
@@ -145,16 +146,16 @@ class SellScreen extends GetWidget<SellController> {
   /// Section Widget
   Widget _buildTwentyOne() {
     return Container(
-        padding: EdgeInsets.symmetric(vertical: 14.v),
+        padding: EdgeInsets.symmetric(vertical: 14.sp),
         decoration: AppDecoration.outlineGray
             .copyWith(borderRadius: BorderRadiusStyle.roundedBorder5),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-          SizedBox(height: 5.v),
+          SizedBox(height: 5.sp),
           CustomAppBar(
               leadingWidth: 35.h,
               leading: AppbarLeadingImage(
                   imagePath: ImageConstant.imgCloseErrorcontainer20x20,
-                  margin: EdgeInsets.only(left: 23.h, top: 4.v, bottom: 7.v),
+                  margin: EdgeInsets.only(left: 23.h, top: 4.sp, bottom: 7.sp),
                   onTap: () {
                     onTapClose();
                   }),
@@ -167,71 +168,88 @@ class SellScreen extends GetWidget<SellController> {
   /// Section Widget
   Widget _buildTextbooksButton() {
     return CustomOutlinedButton(
-        height: 40.v,
+        height: 40.sp,
         text: "lbl_textbooks".tr,
         rightIcon: Container(
             margin: EdgeInsets.only(left: 30.h),
             child: CustomImageView(
-                imagePath: ImageConstant.imgPlay, height: 15.v, width: 10.h)),
+                imagePath: ImageConstant.imgPlay, height: 15.sp, width: 10.h)),
         buttonTextStyle: theme.textTheme.bodyMedium!);
   }
 
   /// Section Widget
   Widget _buildTitleEditText() {
     return CustomTextFormField(
-        controller: controller.titleEditTextController,
-        hintText: "lbl_title".tr,
-        hintStyle: theme.textTheme.bodyMedium!,
-        contentPadding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 11.v));
+      controller: controller.titleEditTextController,
+      hintText: "lbl_title".tr,
+      hintStyle: theme.textTheme.bodyMedium!,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 16.h,
+        vertical: 11.sp,
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildDescriptionEditText() {
     return CustomTextFormField(
-        controller: controller.descriptionEditTextController,
-        hintText: "lbl_description2".tr,
-        hintStyle: theme.textTheme.bodyMedium!,
-        maxLines: 3,
-        contentPadding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 11.v));
+      controller: controller.descriptionEditTextController,
+      hintText: "lbl_description2".tr,
+      hintStyle: theme.textTheme.bodyMedium!,
+      maxLines: 3,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 16.h,
+        vertical: 11.sp,
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildPlayEditText() {
     return CustomTextFormField(
-        controller: controller.playEditTextController,
-        hintText: "msg_obafemi_awolowo".tr,
-        hintStyle: theme.textTheme.bodyMedium!,
-        suffix: Container(
-            margin: EdgeInsets.fromLTRB(30.h, 12.v, 23.h, 12.v),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgPlay, height: 15.v, width: 10.h)),
-        suffixConstraints: BoxConstraints(maxHeight: 40.v));
+      controller: controller.playEditTextController,
+      hintText: "msg_obafemi_awolowo".tr,
+      hintStyle: theme.textTheme.bodyMedium!,
+      suffix: Container(
+          margin: EdgeInsets.fromLTRB(30.h, 12.sp, 23.h, 12.sp),
+          child: CustomImageView(
+              imagePath: ImageConstant.imgPlay, height: 15.sp, width: 10.h)),
+      suffixConstraints: BoxConstraints(
+        maxHeight: 40.sp,
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildConditionEditText() {
     return CustomTextFormField(
-        controller: controller.conditionEditTextController,
-        hintText: "lbl_brand_new".tr,
-        hintStyle: theme.textTheme.bodyMedium!,
-        suffix: Container(
-            margin: EdgeInsets.fromLTRB(30.h, 12.v, 23.h, 12.v),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgPlay, height: 15.v, width: 10.h)),
-        suffixConstraints: BoxConstraints(maxHeight: 40.v));
+      controller: controller.conditionEditTextController,
+      hintText: "lbl_brand_new".tr,
+      hintStyle: theme.textTheme.bodyMedium!,
+      suffix: Container(
+          margin: EdgeInsets.fromLTRB(30.h, 12.sp, 23.h, 12.sp),
+          child: CustomImageView(
+              imagePath: ImageConstant.imgPlay, height: 15.sp, width: 10.h)),
+      suffixConstraints: BoxConstraints(
+        maxHeight: 40.sp,
+      ),
+    );
   }
 
   /// Section Widget
   Widget _buildPlayEditText1() {
     return CustomTextFormField(
-        controller: controller.playEditTextController1,
-        hintText: "lbl_local_pickup".tr,
-        hintStyle: theme.textTheme.bodyMedium!,
-        suffix: Container(
-            margin: EdgeInsets.fromLTRB(30.h, 12.v, 23.h, 12.v),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgPlay, height: 15.v, width: 10.h)),
-        suffixConstraints: BoxConstraints(maxHeight: 40.v));
+      controller: controller.playEditTextController1,
+      hintText: "lbl_local_pickup".tr,
+      hintStyle: theme.textTheme.bodyMedium!,
+      suffix: Container(
+          margin: EdgeInsets.fromLTRB(30.h, 12.sp, 23.h, 12.sp),
+          child: CustomImageView(
+              imagePath: ImageConstant.imgPlay, height: 15.sp, width: 10.h)),
+      suffixConstraints: BoxConstraints(
+        maxHeight: 40.sp,
+      ),
+    );
   }
 
   /// Section Widget
@@ -242,10 +260,10 @@ class SellScreen extends GetWidget<SellController> {
         hintStyle: theme.textTheme.bodyMedium!,
         textInputType: TextInputType.number,
         suffix: Container(
-            margin: EdgeInsets.fromLTRB(30.h, 12.v, 23.h, 12.v),
+            margin: EdgeInsets.fromLTRB(30.h, 12.sp, 23.h, 12.sp),
             child: CustomImageView(
-                imagePath: ImageConstant.imgPlay, height: 15.v, width: 10.h)),
-        suffixConstraints: BoxConstraints(maxHeight: 40.v),
+                imagePath: ImageConstant.imgPlay, height: 15.sp, width: 10.h)),
+        suffixConstraints: BoxConstraints(maxHeight: 40.sp),
         validator: (value) {
           if (!isNumeric(value)) {
             return "err_msg_please_enter_valid_number".tr;
@@ -257,11 +275,15 @@ class SellScreen extends GetWidget<SellController> {
   /// Section Widget
   Widget _buildLanguageEditText() {
     return CustomTextFormField(
-        controller: controller.languageEditTextController,
-        hintText: "lbl2".tr,
-        hintStyle: theme.textTheme.bodyMedium!,
-        textInputAction: TextInputAction.done,
-        contentPadding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 10.v));
+      controller: controller.languageEditTextController,
+      hintText: "lbl2".tr,
+      hintStyle: theme.textTheme.bodyMedium!,
+      textInputAction: TextInputAction.done,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 16.h,
+        vertical: 10.sp,
+      ),
+    );
   }
 
   /// Section Widget
@@ -307,7 +329,7 @@ class SellScreen extends GetWidget<SellController> {
                           color: appTheme.black900.withOpacity(0.85),
                           height: 1.50)))),
           Padding(
-              padding: EdgeInsets.only(left: 67.h, bottom: 32.v),
+              padding: EdgeInsets.only(left: 67.h, bottom: 32.sp),
               child: Text(userInputLabel,
                   style: CustomTextStyles.bodySmallInter
                       .copyWith(color: appTheme.black900.withOpacity(0.85))))

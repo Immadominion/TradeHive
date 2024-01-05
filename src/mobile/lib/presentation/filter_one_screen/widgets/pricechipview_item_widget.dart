@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../models/pricechipview_item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
@@ -23,7 +25,7 @@ class PricechipviewItemWidget extends StatelessWidget {
         child: RawChip(
           padding: EdgeInsets.symmetric(
             horizontal: 15.h,
-            vertical: 9.v,
+            vertical: 9.sp,
           ),
           showCheckmark: false,
           labelPadding: EdgeInsets.zero,
@@ -31,7 +33,7 @@ class PricechipviewItemWidget extends StatelessWidget {
             pricechipviewItemModelObj.lowestPrice!.value,
             style: TextStyle(
               color: appTheme.gray900,
-              fontSize: 14.fSize,
+              fontSize: 14.sp,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w400,
             ),

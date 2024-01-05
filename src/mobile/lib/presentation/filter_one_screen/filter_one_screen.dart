@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../filter_one_screen/widgets/conditionchipview_item_widget.dart';
 import '../filter_one_screen/widgets/pricechipview_item_widget.dart';
 import '../filter_one_screen/widgets/recentchipview_item_widget.dart';
@@ -16,31 +18,31 @@ class FilterOneScreen extends GetWidget<FilterOneController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(horizontal: 18.h, vertical: 28.v),
+                padding:
+                    EdgeInsets.symmetric(horizontal: 18.h, vertical: 28.sp),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       _buildFilterRow(),
-                      SizedBox(height: 19.v),
+                      SizedBox(height: 19.sp),
                       Padding(
                           padding: EdgeInsets.only(left: 3.h),
                           child: Text("lbl_institutions".tr,
                               style: theme.textTheme.titleSmall)),
-                      SizedBox(height: 11.v),
+                      SizedBox(height: 11.sp),
                       Padding(
                           padding: EdgeInsets.only(left: 2.h),
                           child: CustomDropDown(
                               icon: Container(
                                   margin: EdgeInsets.fromLTRB(
-                                      30.h, 15.v, 14.h, 15.v),
+                                      30.h, 15.sp, 14.h, 15.sp),
                                   child: CustomImageView(
                                       imagePath: ImageConstant.imgArrowdown,
-                                      height: 7.v,
+                                      height: 7.sp,
                                       width: 15.h)),
                               hintText: "lbl_all_institution".tr,
                               items: controller.filterOneModelObj.value
@@ -48,21 +50,21 @@ class FilterOneScreen extends GetWidget<FilterOneController> {
                               onChanged: (value) {
                                 controller.onSelected(value);
                               })),
-                      SizedBox(height: 24.v),
+                      SizedBox(height: 24.sp),
                       Padding(
                           padding: EdgeInsets.only(left: 3.h),
                           child: Text("lbl_category".tr,
                               style: theme.textTheme.titleSmall)),
-                      SizedBox(height: 8.v),
+                      SizedBox(height: 8.sp),
                       Padding(
                           padding: EdgeInsets.only(left: 2.h),
                           child: CustomDropDown(
                               icon: Container(
                                   margin: EdgeInsets.fromLTRB(
-                                      30.h, 15.v, 14.h, 15.v),
+                                      30.h, 15.sp, 14.h, 15.sp),
                                   child: CustomImageView(
                                       imagePath: ImageConstant.imgArrowdown,
-                                      height: 7.v,
+                                      height: 7.sp,
                                       width: 15.h)),
                               hintText: "lbl_all_categories".tr,
                               items: controller.filterOneModelObj.value
@@ -70,13 +72,15 @@ class FilterOneScreen extends GetWidget<FilterOneController> {
                               onChanged: (value) {
                                 controller.onSelected1(value);
                               })),
-                      SizedBox(height: 27.v),
+                      SizedBox(height: 27.sp),
                       _buildRecentChipView(),
-                      SizedBox(height: 24.v),
+                      SizedBox(height: 24.sp),
                       _buildPriceChipView(),
-                      SizedBox(height: 24.v),
+                      SizedBox(height: 24.sp),
                       _buildConditionChipView(),
-                      SizedBox(height: 5.v)
+                      SizedBox(
+                        height: 5.sp,
+                      ),
                     ])),
             bottomNavigationBar: _buildApplyButton()));
   }
@@ -88,31 +92,35 @@ class FilterOneScreen extends GetWidget<FilterOneController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomElevatedButton(
-              height: 20.v,
+              height: 20.sp,
               width: 80.h,
               text: "lbl_filters".tr,
-              margin: EdgeInsets.only(top: 5.v, bottom: 10.v),
+              margin: EdgeInsets.only(top: 5.sp, bottom: 10.sp),
               leftIcon: Container(
-                  margin: EdgeInsets.only(right: 10.h),
-                  child: CustomImageView(
-                      imagePath: ImageConstant.imgArrowrightOnprimary,
-                      height: 20.adaptSize,
-                      width: 20.adaptSize)),
+                margin: EdgeInsets.only(right: 10.h),
+                child: CustomImageView(
+                  imagePath: ImageConstant.imgArrowrightOnprimary,
+                  height: 20.sp,
+                  width: 20.sp,
+                ),
+              ),
               buttonStyle: CustomButtonStyles.none,
               buttonTextStyle: CustomTextStyles.titleMediumInter_1,
               onPressed: () {
                 onTapFilters();
               }),
           CustomOutlinedButton(
-              height: 36.v,
+              height: 36.sp,
               width: 95.h,
               text: "lbl_clear_all".tr,
               rightIcon: Container(
-                  margin: EdgeInsets.only(left: 6.h),
-                  child: CustomImageView(
-                      imagePath: ImageConstant.imgArrowrightOnprimary,
-                      height: 16.adaptSize,
-                      width: 16.adaptSize)),
+                margin: EdgeInsets.only(left: 6.h),
+                child: CustomImageView(
+                  imagePath: ImageConstant.imgArrowrightOnprimary,
+                  height: 16.sp,
+                  width: 16.sp,
+                ),
+              ),
               buttonTextStyle: CustomTextStyles.bodyMediumBlack900)
         ]);
   }
@@ -122,7 +130,7 @@ class FilterOneScreen extends GetWidget<FilterOneController> {
     return Padding(
         padding: EdgeInsets.only(left: 2.h),
         child: Obx(() => Wrap(
-            runSpacing: 5.8.v,
+            runSpacing: 5.8.sp,
             spacing: 5.8.h,
             children: List<Widget>.generate(
                 controller.filterOneModelObj.value.recentchipviewItemList.value
@@ -138,7 +146,7 @@ class FilterOneScreen extends GetWidget<FilterOneController> {
     return Padding(
         padding: EdgeInsets.only(left: 3.h),
         child: Obx(() => Wrap(
-            runSpacing: 4.8.v,
+            runSpacing: 4.8.sp,
             spacing: 4.8.h,
             children: List<Widget>.generate(
                 controller.filterOneModelObj.value.pricechipviewItemList.value
@@ -154,7 +162,7 @@ class FilterOneScreen extends GetWidget<FilterOneController> {
     return Padding(
         padding: EdgeInsets.only(left: 3.h),
         child: Obx(() => Wrap(
-            runSpacing: 6.v,
+            runSpacing: 6.sp,
             spacing: 6.h,
             children: List<Widget>.generate(
                 controller.filterOneModelObj.value.conditionchipviewItemList
@@ -168,9 +176,9 @@ class FilterOneScreen extends GetWidget<FilterOneController> {
   /// Section Widget
   Widget _buildApplyButton() {
     return CustomElevatedButton(
-        height: 48.v,
+        height: 48.sp,
         text: "lbl_apply".tr,
-        margin: EdgeInsets.only(left: 20.h, right: 21.h, bottom: 35.v),
+        margin: EdgeInsets.only(left: 20.h, right: 21.h, bottom: 35.sp),
         buttonTextStyle: CustomTextStyles.titleMediumWhiteA700,
         onPressed: () {
           onTapApplyButton();

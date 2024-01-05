@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomSearchView extends StatelessWidget {
   CustomSearchView({
@@ -99,16 +100,16 @@ class CustomSearchView extends StatelessWidget {
         hintStyle: hintStyle ?? CustomTextStyles.bodyLargeGray600,
         prefixIcon: prefix ??
             Container(
-              margin: EdgeInsets.fromLTRB(8.h, 14.v, 12.h, 13.v),
+              margin: EdgeInsets.fromLTRB(8.h, 14.sp, 12.h, 13.sp),
               child: CustomImageView(
                 imagePath: ImageConstant.imgIcon,
-                height: 16.adaptSize,
-                width: 16.adaptSize,
+                height: 16.sp,
+                width: 16.sp,
               ),
             ),
         prefixIconConstraints: prefixConstraints ??
             BoxConstraints(
-              maxHeight: 43.v,
+              maxHeight: 43.sp,
             ),
         suffixIcon: suffix ??
             Padding(
@@ -125,14 +126,14 @@ class CustomSearchView extends StatelessWidget {
             ),
         suffixIconConstraints: suffixConstraints ??
             BoxConstraints(
-              maxHeight: 43.v,
+              maxHeight: 43.sp,
             ),
         isDense: true,
         contentPadding: contentPadding ??
             EdgeInsets.only(
-              top: 11.v,
+              top: 11.sp,
               right: 11.h,
-              bottom: 11.v,
+              bottom: 11.sp,
             ),
         fillColor: fillColor ?? appTheme.gray100,
         filled: filled,

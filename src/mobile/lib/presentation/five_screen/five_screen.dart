@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'controller/five_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
@@ -12,7 +14,6 @@ class FiveScreen extends GetWidget<FiveController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -20,7 +21,7 @@ class FiveScreen extends GetWidget<FiveController> {
                 width: 375.h,
                 child: Column(children: [
                   _buildNavbar(),
-                  SizedBox(height: 48.v),
+                  SizedBox(height: 48.sp),
                   Expanded(
                       child: SingleChildScrollView(child: _buildLoginForm()))
                 ]))));
@@ -29,16 +30,16 @@ class FiveScreen extends GetWidget<FiveController> {
   /// Section Widget
   Widget _buildNavbar() {
     return Container(
-        padding: EdgeInsets.symmetric(vertical: 9.v),
+        padding: EdgeInsets.symmetric(vertical: 9.sp),
         decoration: AppDecoration.fillGrayEf,
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          SizedBox(height: 1.v),
+          SizedBox(height: 1.sp),
           CustomAppBar(
-              height: 21.v,
+              height: 21.sp,
               leadingWidth: 36.h,
               leading: AppbarLeadingImage(
                   imagePath: ImageConstant.imgArrowLeftPrimarycontainer,
-                  margin: EdgeInsets.only(left: 16.h, bottom: 1.v),
+                  margin: EdgeInsets.only(left: 16.h, bottom: 1.sp),
                   onTap: () {
                     onTapArrowLeft();
                   }),
@@ -50,33 +51,36 @@ class FiveScreen extends GetWidget<FiveController> {
   /// Section Widget
   Widget _buildLoginForm() {
     return Padding(
-        padding: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 5.v),
+        padding: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 5.sp),
         child: Column(children: [
           Align(
               alignment: Alignment.centerLeft,
               child: Text("lbl_username".tr, style: theme.textTheme.bodyLarge)),
-          SizedBox(height: 5.v),
+          SizedBox(height: 5.sp),
           CustomTextFormField(
-              controller: controller.userNameController,
-              hintText: "lbl".tr,
-              hintStyle: theme.textTheme.bodyLarge!,
-              contentPadding:
-                  EdgeInsets.symmetric(horizontal: 16.h, vertical: 14.v)),
-          SizedBox(height: 22.v),
+            controller: controller.userNameController,
+            hintText: "lbl".tr,
+            hintStyle: theme.textTheme.bodyLarge!,
+            contentPadding: EdgeInsets.symmetric(
+              horizontal: 16.h,
+              vertical: 14.sp,
+            ),
+          ),
+          SizedBox(height: 22.sp),
           Align(
               alignment: Alignment.centerLeft,
               child: Text("lbl_password".tr, style: theme.textTheme.bodyLarge)),
-          SizedBox(height: 5.v),
+          SizedBox(height: 5.sp),
           CustomTextFormField(
               controller: controller.passwordController,
               textInputAction: TextInputAction.done,
               obscureText: true),
-          SizedBox(height: 10.v),
+          SizedBox(height: 10.sp),
           Align(
               alignment: Alignment.centerRight,
               child: Text("msg_forgot_password".tr,
                   style: CustomTextStyles.bodyMediumPrimary)),
-          SizedBox(height: 123.v),
+          SizedBox(height: 123.sp),
           CustomElevatedButton(
               text: "lbl_log_in2".tr,
               buttonStyle: CustomButtonStyles.fillOnErrorContainer,

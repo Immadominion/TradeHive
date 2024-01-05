@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'controller/two_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
@@ -13,7 +15,6 @@ class TwoScreen extends GetWidget<TwoController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -21,28 +22,28 @@ class TwoScreen extends GetWidget<TwoController> {
                 width: 375.h,
                 child: Column(children: [
                   _buildNavbar(),
-                  SizedBox(height: 49.v),
+                  SizedBox(height: 49.sp),
                   Expanded(
                       child: SingleChildScrollView(
                           child: Padding(
                               padding: EdgeInsets.only(
-                                  left: 16.h, right: 16.h, bottom: 5.v),
+                                  left: 16.h, right: 16.h, bottom: 5.sp),
                               child: Column(children: [
                                 Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text("lbl_email".tr,
                                         style: theme.textTheme.bodyLarge)),
-                                SizedBox(height: 5.v),
+                                SizedBox(height: 5.sp),
                                 _buildEmailEditText(),
-                                SizedBox(height: 24.v),
+                                SizedBox(height: 24.sp),
                                 _buildContinueButton(),
-                                SizedBox(height: 42.v),
+                                SizedBox(height: 42.sp),
                                 _buildDividerORStack(),
-                                SizedBox(height: 42.v),
+                                SizedBox(height: 42.sp),
                                 _buildContinueWithAppleButton(),
-                                SizedBox(height: 12.v),
+                                SizedBox(height: 12.sp),
                                 _buildContinueWithGoogleButton(),
-                                SizedBox(height: 12.v),
+                                SizedBox(height: 12.sp),
                                 _buildContinueWithFacebookButton()
                               ]))))
                 ]))));
@@ -51,16 +52,16 @@ class TwoScreen extends GetWidget<TwoController> {
   /// Section Widget
   Widget _buildNavbar() {
     return Container(
-        padding: EdgeInsets.symmetric(vertical: 9.v),
+        padding: EdgeInsets.symmetric(vertical: 9.sp),
         decoration: AppDecoration.fillGrayEf,
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          SizedBox(height: 1.v),
+          SizedBox(height: 1.sp),
           CustomAppBar(
-              height: 21.v,
+              height: 21.sp,
               leadingWidth: 36.h,
               leading: AppbarLeadingImage(
                   imagePath: ImageConstant.imgClose,
-                  margin: EdgeInsets.only(left: 16.h, bottom: 1.v),
+                  margin: EdgeInsets.only(left: 16.h, bottom: 1.sp),
                   onTap: () {
                     onTapClose();
                   }),
@@ -72,11 +73,15 @@ class TwoScreen extends GetWidget<TwoController> {
   /// Section Widget
   Widget _buildEmailEditText() {
     return CustomTextFormField(
-        controller: controller.emailEditTextController,
-        hintText: "msg_prizigner_gmail_com".tr,
-        hintStyle: theme.textTheme.bodyLarge!,
-        textInputAction: TextInputAction.done,
-        contentPadding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 14.v));
+      controller: controller.emailEditTextController,
+      hintText: "msg_prizigner_gmail_com".tr,
+      hintStyle: theme.textTheme.bodyLarge!,
+      textInputAction: TextInputAction.done,
+      contentPadding: EdgeInsets.symmetric(
+        horizontal: 16.h,
+        vertical: 14.sp,
+      ),
+    );
   }
 
   /// Section Widget
@@ -87,7 +92,7 @@ class TwoScreen extends GetWidget<TwoController> {
   /// Section Widget
   Widget _buildOrButton() {
     return CustomElevatedButton(
-        height: 26.v,
+        height: 26.sp,
         width: 47.h,
         text: "lbl_or".tr.toUpperCase(),
         buttonStyle: CustomButtonStyles.fillOnErrorContainerTL13,
@@ -98,13 +103,13 @@ class TwoScreen extends GetWidget<TwoController> {
   /// Section Widget
   Widget _buildDividerORStack() {
     return SizedBox(
-        height: 26.v,
+        height: 26.sp,
         width: 343.h,
         child: Stack(alignment: Alignment.center, children: [
           Align(
               alignment: Alignment.topCenter,
               child: Padding(
-                  padding: EdgeInsets.only(top: 12.v),
+                  padding: EdgeInsets.only(top: 12.sp),
                   child: SizedBox(
                       width: 343.h,
                       child: Divider(color: appTheme.indigo5001)))),
@@ -117,11 +122,13 @@ class TwoScreen extends GetWidget<TwoController> {
     return CustomOutlinedButton(
         text: "msg_continue_with_apple".tr,
         leftIcon: Container(
-            margin: EdgeInsets.only(right: 30.h),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgIconPrimarycontainer,
-                height: 24.adaptSize,
-                width: 24.adaptSize)),
+          margin: EdgeInsets.only(right: 30.h),
+          child: CustomImageView(
+            imagePath: ImageConstant.imgIconPrimarycontainer,
+            height: 24.sp,
+            width: 24.sp,
+          ),
+        ),
         buttonStyle: CustomButtonStyles.outlineOnErrorContainer);
   }
 
@@ -130,11 +137,13 @@ class TwoScreen extends GetWidget<TwoController> {
     return CustomOutlinedButton(
         text: "msg_continue_with_google".tr,
         leftIcon: Container(
-            margin: EdgeInsets.only(right: 30.h),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgIconRed500,
-                height: 24.adaptSize,
-                width: 24.adaptSize)),
+          margin: EdgeInsets.only(right: 30.h),
+          child: CustomImageView(
+            imagePath: ImageConstant.imgIconRed500,
+            height: 24.sp,
+            width: 24.sp,
+          ),
+        ),
         buttonStyle: CustomButtonStyles.outlineOnErrorContainer);
   }
 
@@ -143,11 +152,13 @@ class TwoScreen extends GetWidget<TwoController> {
     return CustomOutlinedButton(
         text: "msg_continue_with_facebook".tr,
         leftIcon: Container(
-            margin: EdgeInsets.only(right: 30.h),
-            child: CustomImageView(
-                imagePath: ImageConstant.imgFacebook,
-                height: 24.adaptSize,
-                width: 24.adaptSize)),
+          margin: EdgeInsets.only(right: 30.h),
+          child: CustomImageView(
+            imagePath: ImageConstant.imgFacebook,
+            height: 24.sp,
+            width: 24.sp,
+          ),
+        ),
         buttonStyle: CustomButtonStyles.outlineOnErrorContainer);
   }
 

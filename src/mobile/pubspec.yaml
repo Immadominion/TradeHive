@@ -14,6 +14,8 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
   grouped_list: ^5.1.2
   intl: ^0.18.0
+  auto_size_text: ^3.0.0
+  flutter_screenutil: ^5.9.0
 dev_dependencies: 
   flutter_test: 
     sdk: flutter

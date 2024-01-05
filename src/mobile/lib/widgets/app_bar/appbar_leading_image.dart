@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class AppbarLeadingImage extends StatelessWidget {
@@ -28,8 +29,8 @@ class AppbarLeadingImage extends StatelessWidget {
         padding: margin ?? EdgeInsets.zero,
         child: CustomImageView(
           imagePath: imagePath,
-          height: 21.adaptSize,
-          width: 21.adaptSize,
+          height: 21.sp,
+          width: 21.sp,
           fit: BoxFit.contain,
         ),
       ),

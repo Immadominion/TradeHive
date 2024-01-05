@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../search_screen/widgets/searchlist_item_widget.dart';
 import 'controller/search_controller.dart';
 import 'models/searchlist_item_model.dart';
@@ -10,16 +12,15 @@ class SearchScreen extends GetWidget<SearchController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             body: Container(
                 width: double.maxFinite,
-                padding: EdgeInsets.symmetric(vertical: 15.v),
+                padding: EdgeInsets.symmetric(vertical: 15.sp),
                 child: Column(children: [
                   _buildSearchBars(),
-                  SizedBox(height: 26.v),
+                  SizedBox(height: 26.sp),
                   _buildSearchList()
                 ]))));
   }
@@ -41,20 +42,24 @@ class SearchScreen extends GetWidget<SearchController> {
                       hintStyle: CustomTextStyles.bodyLargeOnPrimary,
                       textInputAction: TextInputAction.done,
                       prefix: Container(
-                          margin: EdgeInsets.fromLTRB(8.h, 10.v, 12.h, 10.v),
-                          child: CustomImageView(
-                              imagePath: ImageConstant.imgIcon,
-                              height: 16.adaptSize,
-                              width: 16.adaptSize)),
-                      prefixConstraints: BoxConstraints(maxHeight: 36.v),
+                        margin: EdgeInsets.fromLTRB(8.h, 10.sp, 12.h, 10.sp),
+                        child: CustomImageView(
+                          imagePath: ImageConstant.imgIcon,
+                          height: 16.sp,
+                          width: 16.sp,
+                        ),
+                      ),
+                      prefixConstraints: BoxConstraints(maxHeight: 36.sp),
                       suffix: Container(
-                          margin: EdgeInsets.fromLTRB(30.h, 10.v, 8.h, 10.v),
-                          child: CustomImageView(
-                              imagePath: ImageConstant.imgArrowrightOnprimary,
-                              height: 16.adaptSize,
-                              width: 16.adaptSize)),
-                      suffixConstraints: BoxConstraints(maxHeight: 36.v),
-                      contentPadding: EdgeInsets.symmetric(vertical: 8.v),
+                        margin: EdgeInsets.fromLTRB(30.h, 10.sp, 8.h, 10.sp),
+                        child: CustomImageView(
+                          imagePath: ImageConstant.imgArrowrightOnprimary,
+                          height: 16.sp,
+                          width: 16.sp,
+                        ),
+                      ),
+                      suffixConstraints: BoxConstraints(maxHeight: 36.sp),
+                      contentPadding: EdgeInsets.symmetric(vertical: 8.sp),
                       borderDecoration: TextFormFieldStyleHelper.fillGray,
                       filled: true,
                       fillColor: appTheme.gray100)),
@@ -64,7 +69,7 @@ class SearchScreen extends GetWidget<SearchController> {
                   },
                   child: Padding(
                       padding:
-                          EdgeInsets.only(left: 16.h, top: 8.v, bottom: 7.v),
+                          EdgeInsets.only(left: 16.h, top: 8.sp, bottom: 7.sp),
                       child: Text("lbl_cancel".tr,
                           style: CustomTextStyles.bodyLargeOnPrimary)))
             ]));
@@ -77,7 +82,9 @@ class SearchScreen extends GetWidget<SearchController> {
             physics: BouncingScrollPhysics(),
             shrinkWrap: true,
             separatorBuilder: (context, index) {
-              return SizedBox(height: 7.v);
+              return SizedBox(
+                height: 7.sp,
+              );
             },
             itemCount:
                 controller.searchModelObj.value.searchlistItemList.value.length,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../core/app_export.dart';
 
 /// A collection of pre-defined text styles for customizing text appearance,
@@ -44,34 +45,34 @@ class CustomTextStyles {
         color: appTheme.whiteA700,
       );
   static get bodySmall12 => theme.textTheme.bodySmall!.copyWith(
-        fontSize: 12.fSize,
+        fontSize: 12.sp,
       );
   static get bodySmall12_1 => theme.textTheme.bodySmall!.copyWith(
-        fontSize: 12.fSize,
+        fontSize: 12.sp,
       );
   static get bodySmallBlack900 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.black900,
-        fontSize: 12.fSize,
+        fontSize: 12.sp,
       );
   static get bodySmallBlack90012 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.black900.withOpacity(0.44),
-        fontSize: 12.fSize,
+        fontSize: 12.sp,
       );
   static get bodySmallBlack900_1 => theme.textTheme.bodySmall!.copyWith(
         color: appTheme.black900,
       );
   static get bodySmallInter => theme.textTheme.bodySmall!.inter;
   static get bodySmallInter12 => theme.textTheme.bodySmall!.inter.copyWith(
-        fontSize: 12.fSize,
+        fontSize: 12.sp,
       );
   static get bodySmallInterBluegray700 =>
       theme.textTheme.bodySmall!.inter.copyWith(
         color: appTheme.blueGray700,
-        fontSize: 12.fSize,
+        fontSize: 12.sp,
       );
   static get bodySmallInterGray900 => theme.textTheme.bodySmall!.inter.copyWith(
         color: appTheme.gray900,
-        fontSize: 12.fSize,
+        fontSize: 12.sp,
       );
   static get bodySmallInter_1 => theme.textTheme.bodySmall!.inter;
   // Label text style
@@ -131,14 +132,14 @@ class CustomTextStyles {
       );
   static get titleLargeOnPrimary => theme.textTheme.titleLarge!.copyWith(
         color: theme.colorScheme.onPrimary.withOpacity(0.81),
-        fontSize: 22.fSize,
+        fontSize: 22.sp,
         fontWeight: FontWeight.w700,
       );
   static get titleMediumBlack900 => theme.textTheme.titleMedium!.copyWith(
         color: appTheme.black900,
       );
   static get titleMediumInter => theme.textTheme.titleMedium!.inter.copyWith(
-        fontSize: 18.fSize,
+        fontSize: 18.sp,
       );
   static get titleMediumInterBluegray100 =>
       theme.textTheme.titleMedium!.inter.copyWith(

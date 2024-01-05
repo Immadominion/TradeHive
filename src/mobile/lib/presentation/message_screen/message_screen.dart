@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'controller/message_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:tradehive/core/app_export.dart';
@@ -14,7 +16,6 @@ class MessageScreen extends GetWidget<MessageController> {
 
   @override
   Widget build(BuildContext context) {
-    mediaQueryData = MediaQuery.of(context);
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
@@ -24,7 +25,7 @@ class MessageScreen extends GetWidget<MessageController> {
                   _buildSixteen(),
                   Container(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 19.h, vertical: 24.v),
+                          horizontal: 19.h, vertical: 24.sp),
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -33,11 +34,11 @@ class MessageScreen extends GetWidget<MessageController> {
                                 child: Text("lbl_sep_5_6_51_am".tr,
                                     style:
                                         CustomTextStyles.bodySmallBlack90012)),
-                            SizedBox(height: 14.v),
+                            SizedBox(height: 14.sp),
                             Container(
                                 margin: EdgeInsets.only(right: 137.h),
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: 12.h, vertical: 5.v),
+                                    horizontal: 12.h, vertical: 5.sp),
                                 decoration: AppDecoration.fillIndigo.copyWith(
                                     borderRadius:
                                         BorderRadiusStyle.roundedBorder10),
@@ -45,7 +46,7 @@ class MessageScreen extends GetWidget<MessageController> {
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      SizedBox(height: 4.v),
+                                      SizedBox(height: 4.sp),
                                       SizedBox(
                                           width: 160.h,
                                           child: Text("msg_hello_i_ll_like".tr,
@@ -55,9 +56,9 @@ class MessageScreen extends GetWidget<MessageController> {
                                                   .bodyLargeBlack900
                                                   .copyWith(height: 1.50)))
                                     ])),
-                            SizedBox(height: 9.v),
+                            SizedBox(height: 9.sp),
                             CustomElevatedButton(
-                                height: 40.v,
+                                height: 40.sp,
                                 width: 201.h,
                                 text: "msg_yes_it_is_still".tr,
                                 margin: EdgeInsets.only(right: 1.h),
@@ -65,14 +66,14 @@ class MessageScreen extends GetWidget<MessageController> {
                                 buttonTextStyle:
                                     CustomTextStyles.bodyLargeWhiteA700,
                                 alignment: Alignment.centerRight),
-                            SizedBox(height: 9.v),
+                            SizedBox(height: 9.sp),
                             Align(
                                 alignment: Alignment.centerRight,
                                 child: Container(
                                     margin: EdgeInsets.only(
                                         left: 134.h, right: 1.h),
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 21.h, vertical: 8.v),
+                                        horizontal: 21.h, vertical: 8.sp),
                                     decoration: AppDecoration.fillPrimary
                                         .copyWith(
                                             borderRadius: BorderRadiusStyle
@@ -82,26 +83,28 @@ class MessageScreen extends GetWidget<MessageController> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
-                                          SizedBox(height: 3.v),
+                                          SizedBox(height: 3.sp),
                                           Text("msg_how_many_pieces".tr,
                                               style: CustomTextStyles
                                                   .bodyLargeWhiteA700)
                                         ]))),
-                            SizedBox(height: 24.v),
+                            SizedBox(height: 24.sp),
                             Align(
                                 alignment: Alignment.center,
                                 child: Text("lbl_sep_5_6_51_am".tr,
                                     style:
                                         CustomTextStyles.bodySmallBlack90012)),
-                            SizedBox(height: 14.v),
+                            SizedBox(height: 14.sp),
                             CustomElevatedButton(
-                                height: 40.v,
+                                height: 40.sp,
                                 width: 184.h,
                                 text: "msg_just_fourteen_pieces".tr,
                                 buttonStyle: CustomButtonStyles.fillIndigo,
                                 buttonTextStyle:
                                     CustomTextStyles.bodyLargeBlack900),
-                            SizedBox(height: 5.v)
+                            SizedBox(
+                              height: 5.sp,
+                            ),
                           ]))
                 ])),
             bottomNavigationBar: _buildMessage()));
@@ -113,13 +116,14 @@ class MessageScreen extends GetWidget<MessageController> {
         decoration: AppDecoration.outlineGray
             .copyWith(borderRadius: BorderRadiusStyle.roundedBorder5),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
-          SizedBox(height: 17.v),
+          SizedBox(height: 17.sp),
           CustomAppBar(
-              height: 42.v,
+              height: 42.sp,
               leadingWidth: 40.h,
               leading: AppbarLeadingImage(
                   imagePath: ImageConstant.imgArrowLeft,
-                  margin: EdgeInsets.only(left: 19.h, top: 10.v, bottom: 10.v),
+                  margin:
+                      EdgeInsets.only(left: 19.h, top: 10.sp, bottom: 10.sp),
                   onTap: () {
                     onTapArrowLeft();
                   }),
@@ -130,10 +134,16 @@ class MessageScreen extends GetWidget<MessageController> {
                 AppbarTrailingImage(
                     imagePath: ImageConstant.imgCallErrorcontainer,
                     margin:
-                        EdgeInsets.only(left: 20.h, top: 13.v, right: 14.h)),
+                        EdgeInsets.only(left: 20.h, top: 13.sp, right: 14.h)),
                 AppbarTrailingImage(
-                    imagePath: ImageConstant.imgGroup6065,
-                    margin: EdgeInsets.fromLTRB(11.h, 18.v, 34.h, 4.v))
+                  imagePath: ImageConstant.imgGroup6065,
+                  margin: EdgeInsets.fromLTRB(
+                    11.h,
+                    18.sp,
+                    34.h,
+                    4.sp,
+                  ),
+                )
               ])
         ]));
   }
@@ -141,11 +151,11 @@ class MessageScreen extends GetWidget<MessageController> {
   /// Section Widget
   Widget _buildMessage() {
     return Padding(
-        padding: EdgeInsets.only(left: 21.h, right: 21.h, bottom: 30.v),
+        padding: EdgeInsets.only(left: 21.h, right: 21.h, bottom: 30.sp),
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           CustomIconButton(
-              height: 50.adaptSize,
-              width: 50.adaptSize,
+              height: 50.sp,
+              width: 50.sp,
               padding: EdgeInsets.all(13.h),
               decoration: IconButtonStyleHelper.fillGray,
               child: CustomImageView(imagePath: ImageConstant.imgCamera)),
@@ -157,15 +167,16 @@ class MessageScreen extends GetWidget<MessageController> {
                       hintText: "lbl_message".tr,
                       textInputAction: TextInputAction.done,
                       suffix: Container(
-                          margin: EdgeInsets.fromLTRB(30.h, 13.v, 10.h, 13.v),
-                          child: CustomImageView(
-                              imagePath:
-                                  ImageConstant.imgVuesaxOutlineMicrophone2,
-                              height: 24.adaptSize,
-                              width: 24.adaptSize)),
-                      suffixConstraints: BoxConstraints(maxHeight: 50.v),
-                      contentPadding:
-                          EdgeInsets.only(left: 15.h, top: 16.v, bottom: 16.v),
+                        margin: EdgeInsets.fromLTRB(30.h, 13.sp, 10.h, 13.sp),
+                        child: CustomImageView(
+                          imagePath: ImageConstant.imgVuesaxOutlineMicrophone2,
+                          height: 24.sp,
+                          width: 24.sp,
+                        ),
+                      ),
+                      suffixConstraints: BoxConstraints(maxHeight: 50.sp),
+                      contentPadding: EdgeInsets.only(
+                          left: 15.h, top: 16.sp, bottom: 16.sp),
                       borderDecoration: TextFormFieldStyleHelper.fillGrayTL12,
                       filled: true,
                       fillColor: appTheme.gray10001)))
